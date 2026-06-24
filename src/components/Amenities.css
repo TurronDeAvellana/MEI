@@ -1,0 +1,8 @@
+.amenities {
+  text-align: center;
+}
+
+.amenities p {
+  max-width: 560px;
+  margin: 16px auto 32px;
+}
