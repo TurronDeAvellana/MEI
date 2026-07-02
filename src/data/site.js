@@ -6,14 +6,13 @@ export const site = {
   logo: "/mei/logo.png",
   contact: {
     email: "mei@meimagic.co",
-    whatsapp: "+573XXXXXXXXX",
+    whatsapp: "+573123243726",
     instagram: "@meimagic.co",
   },
   nav: [
     { label: "Inicio", href: "#hero" },
     { label: "Esencia", href: "#esencia" },
     { label: "Productos", href: "#productos" },
-    { label: "Ingredientes", href: "#ingredientes" },
     { label: "Amenities", href: "#amenities" },
     { label: "Mat Defence", href: "#mat-defence" },
     { label: "Contacto", href: "#footer" },
@@ -26,7 +25,7 @@ export const site = {
       "Ingredientes naturales, procesos conscientes y una experiencia premium para el cuidado personal.",
     ctaPrimary: { label: "Ver Colección", href: "#productos" },
     ctaSecondary: { label: "Descubrir Mat Defence", href: "#mat-defence" },
-    image: "/src/assets/mei/hero-soap.jpg",
+    images: ["/mei/productos/hero1.png", "/mei/productos/hero2.png"],
   },
   essence: {
     title: "Nuestra Esencia",

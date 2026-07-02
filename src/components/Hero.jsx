@@ -1,8 +1,17 @@
+import { useState, useEffect } from "react";
 import { site } from "../data/site.js";
 import "./Hero.css";
 
 function Hero() {
-  const { eyebrow, headline, body, ctaPrimary, ctaSecondary, image } = site.hero;
+  const { eyebrow, headline, body, ctaPrimary, ctaSecondary, images } = site.hero;
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
     <section id="hero" className="hero">
@@ -20,7 +29,14 @@ function Hero() {
         </div>
       </div>
       <div className="hero__image">
-        <img src={image} alt={`${site.name} jabón artesanal`} />
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={`${site.name} jabón artesanal ${i + 1}`}
+            className={i === current ? "active" : ""}
+          />
+        ))}
       </div>
     </section>
   );

@@ -48,9 +48,23 @@
   color: var(--color-cream);
 }
 
+.hero__image {
+  position: relative;
+}
+
 .hero__image img {
   width: 100%;
   border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hero__image img.active {
+  opacity: 1;
+  position: relative;
 }
 
 @media (min-width: 992px) {

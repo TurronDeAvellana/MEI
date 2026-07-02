@@ -10,6 +10,9 @@
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .product-card:hover {
@@ -42,4 +45,30 @@
   .products__grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .products__grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.products__more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn--outline {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1.5px solid var(--color-sage-dark);
+  border-radius: 100px;
+  color: var(--color-sage-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn--outline:hover {
+  background: var(--color-sage-dark);
+  color: var(--color-cream);
 }

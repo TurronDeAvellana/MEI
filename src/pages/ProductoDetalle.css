@@ -1,0 +1,117 @@
+.detalle {
+  padding: 100px 6% 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.detalle__back {
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+  color: var(--color-sage-dark);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.detalle__back:hover {
+  text-decoration: underline;
+}
+
+.detalle__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detalle__image-wrap img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.detalle__category {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sage-dark);
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.detalle__name {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+
+.detalle__tagline {
+  font-size: 1.05rem;
+  color: var(--color-text-light, #666);
+  margin-bottom: 28px;
+}
+
+.detalle__price {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-sage-dark);
+  margin-bottom: 4px;
+}
+
+.detalle__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--color-text-light, #888);
+  letter-spacing: 0.03em;
+}
+
+.detalle__description {
+  margin-top: 28px;
+  line-height: 1.75;
+  color: var(--color-text, #333);
+}
+
+.detalle__ingredients {
+  margin-top: 32px;
+}
+
+.detalle__ingredients h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.detalle__ingredients ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detalle__ingredients li {
+  background: var(--color-sage-soft, #e8ede8);
+  color: var(--color-sage-dark);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+.detalle__cta {
+  display: inline-block;
+  margin-top: 36px;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .detalle__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
