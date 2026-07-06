@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 6%;
-  background: rgba(244, 239, 232, 0.88);
+  background: rgba(78, 87, 66, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
@@ -14,22 +14,28 @@
 }
 
 .navbar--scrolled {
-  background: rgba(244, 239, 232, 0.98);
-  border-bottom-color: rgba(126, 131, 104, 0.18);
+  background: rgba(78, 87, 66, 0.98);
+  border-bottom-color: rgba(244, 239, 232, 0.14);
 }
 
-/* Logo */
+/* Logo — cream medallion keeps the mark legible on the dark bar */
 .navbar__logo {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   position: relative;
   z-index: 1001;
+  width: 44px;
+  height: 44px;
+  padding: 7px;
+  border-radius: 50%;
+  background: var(--cream);
 }
 
 .navbar__logo img {
-  height: 44px;
-  width: 44px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -47,8 +53,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--sage-dark);
-  opacity: 0.75;
+  color: var(--cream);
+  opacity: 0.8;
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 
@@ -100,7 +106,7 @@
 .navbar__burger span {
   display: block;
   height: 1.5px;
-  background: var(--sage-dark);
+  background: var(--cream);
   border-radius: 2px;
   transform-origin: center;
   transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
@@ -131,14 +137,14 @@
   right: 0;
   bottom: 0;
   width: min(80vw, 300px);
-  background: var(--cream);
+  background: var(--sage-dark);
   z-index: 1000;
   padding: 100px 36px 48px;
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -8px 0 40px rgba(44,44,44,0.12);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.3);
 }
 
 .navbar__drawer--open {
@@ -153,7 +159,7 @@
 }
 
 .navbar__drawer-links li {
-  border-bottom: 1px solid rgba(78, 87, 66, 0.1);
+  border-bottom: 1px solid rgba(244, 239, 232, 0.14);
 }
 
 .navbar__drawer-links a {
@@ -163,7 +169,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   text-decoration: none;
-  color: var(--sage-dark);
+  color: var(--cream);
   transition: color 0.2s ease, padding-left 0.2s ease;
 }
 

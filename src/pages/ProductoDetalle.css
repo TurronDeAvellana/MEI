@@ -125,6 +125,17 @@
   margin-bottom: 6px;
 }
 
+.detalle__mini-price {
+  font-size: 0.8rem;
+  color: var(--stone);
+  margin-bottom: 20px;
+}
+
+.detalle__mini-price strong {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
 .detalle__meta {
   display: flex;
   flex-wrap: wrap;

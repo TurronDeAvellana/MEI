@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../data/products.js";
+import { formatPrice } from "../utils/formatPrice.js";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import "./Catalogo.css";
@@ -60,7 +61,16 @@ function Catalogo() {
               </div>
               <div className="product-card__body">
                 <h3>{product.name}</h3>
-                <p>{product.tagline}</p>
+                <p className="product-card__tagline">{product.tagline}</p>
+                <div className="product-card__footer">
+                  <div className="product-card__prices">
+                    <span className="product-card__price">{formatPrice(product.price)}</span>
+                    {product.miniPrice && (
+                      <span className="product-card__mini">Mini 30g: {formatPrice(product.miniPrice)}</span>
+                    )}
+                  </div>
+                  <span className="product-card__cta">Ver más</span>
+                </div>
               </div>
             </Link>
           ))}

@@ -1,9 +1,9 @@
 .ingredients {
-  background: var(--cream);
+  background: var(--terracotta-mist);
   text-align: center;
 }
 
-.ingredients .eyebrow {
+.ingredients .section-label {
   margin-bottom: 12px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .ingredient-card {
-  background: var(--cream-deep);
+  background: var(--cream);
   padding: 28px 16px 24px;
   border-radius: 20px;
   border: 1px solid rgba(78, 87, 66, 0.1);

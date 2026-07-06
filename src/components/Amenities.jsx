@@ -1,4 +1,5 @@
 import { site } from "../data/site.js";
+import Sprig from "./Sprig.jsx";
 import "./Amenities.css";
 
 function Amenities() {
@@ -10,7 +11,10 @@ function Amenities() {
 
   return (
     <section id="amenities" className="section amenities">
-      <span className="eyebrow">Empresas & Hoteles</span>
+      <div className="section-label">
+        <Sprig className="section-label__sprig" />
+        <span className="eyebrow">Empresas & Hoteles</span>
+      </div>
       <h2>
         {titleStart && `${titleStart} `}
         <em>{titleAccent}</em>

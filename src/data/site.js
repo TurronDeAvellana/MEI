@@ -11,17 +11,16 @@ export const site = {
   },
   nav: [
     { label: "Inicio", href: "/#hero" },
-    { label: "Productos", href: "/#productos" },
+    { label: "Productos", href: "/catalogo" },
     { label: "Amenities", href: "/#amenities" },
     { label: "Mat Defence", href: "/mat-defence" },
     { label: "Contacto", href: "/#footer" },
   ],
   hero: {
-    eyebrow: "Rituales naturales para el cuidado diario",
-    headline:
-      "Jabones artesanales elaborados con ingredientes seleccionados para transformar tu rutina.",
+    eyebrow: "Inspirados en los dioses. Creados por la naturaleza.",
+    headline: "Más que un jabón, un pequeño ritual diario.",
     body:
-      "Ingredientes naturales, procesos conscientes y una experiencia premium para el cuidado personal.",
+      "Cada pieza combina ingredientes naturales, aromas cuidadosamente seleccionados y un diseño inspirado en la mitología para transformar un hábito cotidiano en un momento especial.",
     ctaPrimary: { label: "Ver Colección", href: "#productos" },
     ctaSecondary: { label: "Descubrir Mat Defence", href: "#mat-defence" },
     images: ["/mei/productos/hero1.jpg", "/mei/productos/hero2.jpg"],

@@ -1,4 +1,5 @@
 import { site } from "../data/site.js";
+import Sprig from "./Sprig.jsx";
 import "./Ingredients.css";
 
 const icons = {
@@ -35,7 +36,10 @@ const icons = {
 function Ingredients() {
   return (
     <section id="ingredientes" className="section ingredients">
-      <span className="eyebrow">Lo que usamos</span>
+      <div className="section-label">
+        <Sprig className="section-label__sprig" />
+        <span className="eyebrow">Lo que usamos</span>
+      </div>
       <h2>Ingredientes <em>Naturales</em></h2>
       <div className="ingredients__grid">
         {site.ingredients.map((ingredient) => (

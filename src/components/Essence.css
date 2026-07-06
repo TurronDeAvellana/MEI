@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   gap: 48px;
   align-items: center;
-  background: var(--cream);
+  background: var(--terracotta-mist);
 }
 
 /* Image */
@@ -62,12 +62,13 @@
 }
 
 /* Content */
-.essence__rule {
+.essence__sprig {
   display: block;
-  width: 42px;
-  height: 2px;
-  background: var(--terracotta);
-  margin-bottom: 22px;
+  width: 30px;
+  height: auto;
+  color: var(--terracotta);
+  opacity: 0.8;
+  margin-bottom: 18px;
 }
 
 .essence__content h2 {

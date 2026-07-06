@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "../data/products.js";
+import { formatPrice } from "../utils/formatPrice.js";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import "./ProductoDetalle.css";
@@ -19,11 +20,7 @@ function ProductoDetalle() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
-  const formattedPrice = new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-  }).format(product.price);
+  const formattedPrice = formatPrice(product.price);
 
   return (
     <>
@@ -57,6 +54,11 @@ function ProductoDetalle() {
             <p className="detalle__tagline">{product.tagline}</p>
 
             <p className="detalle__price">{formattedPrice}</p>
+            {product.miniPrice && (
+              <p className="detalle__mini-price">
+                También disponible en versión mini (30g): <strong>{formatPrice(product.miniPrice)}</strong>
+              </p>
+            )}
             <div className="detalle__meta">
               {product.scent && <span>Aroma: {product.scent}</span>}
               {product.color && <span>Color: {product.color}</span>}

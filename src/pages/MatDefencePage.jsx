@@ -104,7 +104,7 @@ function MatDefencePage() {
           <div className="md-products__grid">
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/matdefencegrande.png" alt="Mat Defence Grande" />
+                <img src="/mat_defence/matdefencegrande.jpeg" alt="Mat Defence Grande" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">120 g</span>
@@ -126,7 +126,7 @@ function MatDefencePage() {
 
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/matdefencemini.png" alt="Mat Defence Mini" />
+                <img src="/mat_defence/matdefencechico.png" alt="Mat Defence Mini" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">30 g</span>

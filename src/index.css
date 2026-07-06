@@ -10,6 +10,10 @@
   --charcoal:    #2A2A2A;
   --white:       #FFFFFF;
 
+  /* Soft section washes */
+  --terracotta-mist: #F1E2D3;
+  --terracotta-wash: #E6D0B4;
+
   /* Mat Defence palette */
   --md-black:   #111111;
   --md-dark:    #1A1A1A;
@@ -75,6 +79,26 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   color: var(--terracotta);
   margin-bottom: 16px;
+}
+
+/* ── Section label (botanical sprig + eyebrow) ─────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.section-label .eyebrow {
+  margin-bottom: 0;
+}
+
+.section-label__sprig {
+  width: 20px;
+  height: auto;
+  color: var(--terracotta);
+  opacity: 0.85;
+  flex-shrink: 0;
 }
 
 /* ── Decorative divider ──────────────────────────────────────── */

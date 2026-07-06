@@ -27,6 +27,14 @@
   margin-bottom: 16px;
 }
 
+.footer__sprig {
+  width: 26px;
+  height: auto;
+  color: var(--terracotta);
+  opacity: 0.75;
+  margin-bottom: 14px;
+}
+
 .footer__tagline {
   font-size: 0.82rem;
   line-height: 1.7;

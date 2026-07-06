@@ -1,4 +1,5 @@
 import { site } from "../data/site.js";
+import Sprig from "./Sprig.jsx";
 import "./Essence.css";
 
 function Essence() {
@@ -17,7 +18,7 @@ function Essence() {
         <img src={image} alt="Proceso artesanal de elaboración MEI" />
       </div>
       <div className="essence__content">
-        <span className="essence__rule" aria-hidden="true" />
+        <Sprig className="essence__sprig" />
         <h2>
           {titleStart && `${titleStart} `}
           <em>{lastWord}</em>
