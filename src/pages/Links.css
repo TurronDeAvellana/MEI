@@ -1,0 +1,198 @@
+/* ── Links page — MEI Linktree ───────────────────────────────── */
+
+.links-page {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* Blurred background */
+.links-page__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.links-page__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(14px);
+  transform: scale(1.12);
+}
+
+/* Warm dark overlay */
+.links-page__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 36, 28, 0.45);
+}
+
+/* Card */
+.links-card {
+  position: relative;
+  z-index: 10;
+  background: var(--cream);
+  border-radius: 28px;
+  box-shadow: 0 32px 80px rgba(44, 36, 28, 0.3);
+  max-width: 440px;
+  width: 100%;
+  padding: 40px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Logo */
+.links-card__logo {
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(78, 87, 66, 0.2);
+}
+
+/* Name */
+.links-card__name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--sage-dark);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Tagline */
+.links-card__tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--stone);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 280px;
+  margin-bottom: 28px;
+}
+
+/* Links list */
+.links-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.links-card__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(78, 87, 66, 0.14);
+  background: var(--cream-deep);
+  color: var(--charcoal);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.links-card__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(78, 87, 66, 0.12);
+  border-color: rgba(78, 87, 66, 0.28);
+}
+
+.links-card__link:active {
+  transform: scale(0.98);
+}
+
+/* Highlight link — terracotta */
+.links-card__link--highlight {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+.links-card__link--highlight:hover {
+  background: #b87a5a;
+  border-color: #b87a5a;
+  box-shadow: 0 8px 24px rgba(201, 138, 104, 0.3);
+}
+
+.links-card__emoji {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.links-card__link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.links-card__link-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.links-card__link-desc {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  opacity: 0.65;
+}
+
+.links-card__link--highlight .links-card__link-desc {
+  opacity: 0.8;
+}
+
+/* Developer CTA */
+.links-card__dev-cta {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1.5px dashed rgba(78, 87, 66, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--stone);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.links-card__dev-cta:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+/* Footer */
+.links-card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.links-card__footer p,
+.links-card__footer a {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: rgba(78, 87, 66, 0.4);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.links-card__footer a:hover {
+  color: var(--sage-dark);
+}

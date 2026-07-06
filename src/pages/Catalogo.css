@@ -1,40 +1,107 @@
 .catalogo {
-  padding: 100px 6% 80px;
-  max-width: 1200px;
+  padding: 80px 6% 80px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .catalogo__header {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .catalogo__back {
-  display: inline-block;
-  margin-bottom: 24px;
-  font-size: 0.9rem;
-  color: var(--color-sage-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 32px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
   text-decoration: none;
-  letter-spacing: 0.03em;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
 .catalogo__back:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
-.catalogo__header h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
+.catalogo__header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(78, 87, 66, 0.14);
+}
+
+.catalogo__heading .eyebrow {
   margin-bottom: 12px;
 }
 
-.catalogo__header p {
-  color: var(--color-text-light, #666);
+.catalogo__heading h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.catalogo__lede {
+  font-size: 0.95rem;
+  color: var(--stone);
+  line-height: 1.85;
+  max-width: 520px;
+}
+
+@media (min-width: 992px) {
+  .catalogo__header-top {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .catalogo__lede {
+    text-align: right;
+    padding-bottom: 6px;
+  }
+}
+
+.catalogo__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.catalogo__filter {
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sage-dark);
+  background: transparent;
+  color: var(--sage-dark);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.catalogo__filter:hover {
+  background: rgba(78, 87, 66, 0.1);
+}
+
+.catalogo__filter--active {
+  background: var(--sage-dark);
+  color: var(--cream);
 }
 
 .catalogo__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
 @media (min-width: 600px) {

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "../data/products.js";
 import Navbar from "../components/Navbar.jsx";
@@ -9,6 +10,14 @@ function ProductoDetalle() {
   const product = products.find((p) => p.slug === slug);
 
   if (!product) return <Navigate to="/catalogo" replace />;
+
+  const images = [product.image, product.image2].filter(Boolean);
+  const [activeImage, setActiveImage] = useState(images[0]);
+
+  useEffect(() => {
+    setActiveImage(images[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
 
   const formattedPrice = new Intl.NumberFormat("es-CO", {
     style: "currency",
@@ -24,7 +33,22 @@ function ProductoDetalle() {
 
         <div className="detalle__layout">
           <div className="detalle__image-wrap">
-            <img src={product.image} alt={product.name} />
+            <img src={activeImage} alt={product.name} />
+            {images.length > 1 && (
+              <div className="detalle__thumbs">
+                {images.map((img, i) => (
+                  <button
+                    key={img}
+                    type="button"
+                    className={`detalle__thumb ${activeImage === img ? "detalle__thumb--active" : ""}`}
+                    onClick={() => setActiveImage(img)}
+                    aria-label={`Ver foto ${i + 1} de ${product.name}`}
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="detalle__info">

@@ -7,18 +7,26 @@ function ProductGrid() {
 
   return (
     <section id="productos" className="section products">
-      <h2>Colección Principal</h2>
+      <span className="eyebrow">Colección</span>
+      <h2>Jabones Artesanales</h2>
       <div className="products__grid products__grid--3col">
         {preview.map((product) => (
           <Link to={`/producto/${product.slug}`} key={product.slug} className="product-card">
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.tagline}</p>
+            <div className="product-card__image">
+              <img src={product.image} alt={product.name} className="product-card__img product-card__img--main" />
+              {product.image2 && (
+                <img src={product.image2} alt="" className="product-card__img product-card__img--hover" />
+              )}
+            </div>
+            <div className="product-card__body">
+              <h3>{product.name}</h3>
+              <p>{product.tagline}</p>
+            </div>
           </Link>
         ))}
       </div>
       <div className="products__more">
-        <Link to="/catalogo" className="btn btn--outline">Ver más productos</Link>
+        <Link to="/catalogo" className="btn--outline">Ver colección completa</Link>
       </div>
     </section>
   );

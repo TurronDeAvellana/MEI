@@ -6,6 +6,7 @@ function Amenities() {
 
   return (
     <section id="amenities" className="section amenities">
+      <span className="eyebrow">Empresas & Hoteles</span>
       <h2>{title}</h2>
       <p>{body}</p>
       <a className="btn btn--primary" href={cta.href}>

@@ -3,63 +3,68 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 40px;
-  padding: 100px 6% 60px;
-
-  background: linear-gradient(
-    120deg,
-    var(--color-sage-dark) 0%,
-    var(--color-sage-soft) 100%
-  );
+  gap: 36px;
+  padding: 90px 6% 60px;
+  background: var(--cream);
 }
 
+/* Eyebrow */
 .hero__eyebrow {
-  display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-cream);
-  opacity: 0.85;
+  color: var(--terracotta);
+  margin-bottom: 20px;
 }
 
 .hero__headline {
-  font-size: 2.5rem;
-  line-height: 1.15;
-  color: var(--color-cream);
-  margin: 16px 0;
+  font-size: clamp(2rem, 4vw, 3.8rem);
   font-weight: 300;
+  line-height: 1.1;
+  color: var(--sage-dark);
+  margin-bottom: 16px;
+}
+
+.hero__headline em {
+  font-style: italic;
+  color: var(--terracotta);
 }
 
 .hero__body {
-  max-width: 560px;
-  color: var(--color-cream);
-  opacity: 0.9;
+  max-width: 480px;
+  font-size: 0.9rem;
+  color: var(--stone);
+  line-height: 1.75;
+  margin-bottom: 0;
 }
 
 .hero__buttons {
-  margin-top: 32px;
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
-.hero .btn--secondary {
-  border: 1px solid var(--color-cream);
-  color: var(--color-cream);
-}
-
+/* Image side */
 .hero__image {
   position: relative;
+  border-radius: 24px;
+  overflow: hidden;
 }
 
 .hero__image img {
   width: 100%;
-  border-radius: 20px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 24px;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.9s ease-in-out;
 }
 
 .hero__image img.active {
@@ -67,13 +72,31 @@
   position: relative;
 }
 
+/* Decorative dot */
+.hero__image::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--cream-deep);
+  border-radius: 50%;
+  z-index: -1;
+}
+
 @media (min-width: 992px) {
   .hero {
     grid-template-columns: 1fr 1fr;
+    gap: 60px;
     padding: 0 8%;
   }
 
-  .hero__headline {
-    font-size: 4rem;
+  .hero__content {
+    order: 1;
+  }
+
+  .hero__image {
+    order: 2;
   }
 }
