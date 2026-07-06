@@ -36,7 +36,7 @@ function Ingredients() {
   return (
     <section id="ingredientes" className="section ingredients">
       <span className="eyebrow">Lo que usamos</span>
-      <h2>Ingredientes Naturales</h2>
+      <h2>Ingredientes <em>Naturales</em></h2>
       <div className="ingredients__grid">
         {site.ingredients.map((ingredient) => (
           <div key={ingredient.label} className="ingredient-card">

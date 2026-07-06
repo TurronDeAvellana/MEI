@@ -13,6 +13,11 @@
   margin-bottom: 36px;
 }
 
+.ingredients > h2 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
 .ingredients__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,11 +39,15 @@
 
 .ingredient-card__icon {
   display: inline-flex;
-  width: 36px;
-  height: 36px;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 14px;
   color: var(--sage-dark);
+  background: radial-gradient(circle, rgba(201, 138, 104, 0.16) 0%, rgba(201, 138, 104, 0) 72%);
+  border-radius: 50%;
   margin-bottom: 14px;
-  opacity: 0.8;
 }
 
 .ingredient-card p {

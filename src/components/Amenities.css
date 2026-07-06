@@ -16,6 +16,11 @@
   margin-bottom: 16px;
 }
 
+.amenities h2 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
 .amenities > p {
   max-width: 520px;
   margin: 0 auto 36px;

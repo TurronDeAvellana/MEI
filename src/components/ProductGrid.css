@@ -12,6 +12,11 @@
   margin-bottom: 36px;
 }
 
+.products > h2 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
 .products__grid {
   display: grid;
   grid-template-columns: 1fr;

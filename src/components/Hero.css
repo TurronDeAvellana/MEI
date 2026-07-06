@@ -48,10 +48,54 @@
   gap: 12px;
 }
 
-/* Image side */
+/* Image frame — tilted, warm glow, straightens on hover */
+.hero__image-frame {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--cream-deep);
+  padding: 14px;
+  border-radius: 26px;
+  box-shadow:
+    0 30px 60px -28px rgba(42, 42, 42, 0.35),
+    0 10px 26px -16px rgba(201, 138, 104, 0.3);
+  transform: rotate(-2.5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero__image-frame:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow:
+    0 36px 70px -28px rgba(42, 42, 42, 0.4),
+    0 12px 30px -16px rgba(201, 138, 104, 0.35);
+}
+
+.hero__image-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  background: radial-gradient(circle, var(--terracotta) 0%, rgba(201, 138, 104, 0) 68%);
+  opacity: 0.4;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.hero__image-frame::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 64px;
+  height: 64px;
+  background: var(--sage);
+  opacity: 0.16;
+  border-radius: 50%;
+  z-index: -1;
+}
+
 .hero__image {
   position: relative;
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -59,7 +103,6 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 24px;
   position: absolute;
   top: 0;
   left: 0;
@@ -72,22 +115,9 @@
   position: relative;
 }
 
-/* Decorative dot */
-.hero__image::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 120px;
-  height: 120px;
-  background: var(--cream-deep);
-  border-radius: 50%;
-  z-index: -1;
-}
-
 @media (min-width: 992px) {
   .hero {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 60px;
     padding: 0 8%;
   }
@@ -96,7 +126,9 @@
     order: 1;
   }
 
-  .hero__image {
+  .hero__image-frame {
     order: 2;
+    max-width: 640px;
+    margin: 0;
   }
 }

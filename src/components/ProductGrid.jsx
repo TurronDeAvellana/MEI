@@ -8,7 +8,7 @@ function ProductGrid() {
   return (
     <section id="productos" className="section products">
       <span className="eyebrow">Colección</span>
-      <h2>Jabones Artesanales</h2>
+      <h2>Jabones <em>Artesanales</em></h2>
       <div className="products__grid products__grid--3col">
         {preview.map((product) => (
           <Link to={`/producto/${product.slug}`} key={product.slug} className="product-card">

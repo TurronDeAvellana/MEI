@@ -6,6 +6,10 @@ function Hero() {
   const { eyebrow, headline, body, ctaPrimary, ctaSecondary, images } = site.hero;
   const [current, setCurrent] = useState(0);
 
+  const headlineWords = headline.trim().split(" ");
+  const headlineAccent = headlineWords.pop();
+  const headlineStart = headlineWords.join(" ");
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -17,7 +21,10 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero__content">
         <span className="hero__eyebrow">{eyebrow}</span>
-        <h1 className="hero__headline">{headline}</h1>
+        <h1 className="hero__headline">
+          {headlineStart && `${headlineStart} `}
+          <em>{headlineAccent}</em>
+        </h1>
         <p className="hero__body">{body}</p>
         <div className="hero__buttons">
           <a className="btn btn--primary" href={ctaPrimary.href}>
@@ -28,15 +35,17 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="hero__image">
-        {images.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt={`${site.name} jabón artesanal ${i + 1}`}
-            className={i === current ? "active" : ""}
-          />
-        ))}
+      <div className="hero__image-frame">
+        <div className="hero__image">
+          {images.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${site.name} jabón artesanal ${i + 1}`}
+              className={i === current ? "active" : ""}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
