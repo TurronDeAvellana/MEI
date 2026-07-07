@@ -188,7 +188,7 @@ function MatDefencePage() {
         <div className="md-page__section md-athletes">
           <div className="md-athletes__header">
             <p className="md-page__section-label">Team Mat Defence</p>
-            <h2 className="md-athletes__title">Deportistas<br />Patrocinados</h2>
+            <h2 className="md-athletes__title">Atletas<br />MEI</h2>
           </div>
           <div className="md-athletes__grid">
             {athletes.map((athlete) => (
