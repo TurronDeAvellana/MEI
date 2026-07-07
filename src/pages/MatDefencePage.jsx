@@ -148,6 +148,29 @@ function MatDefencePage() {
           </div>
         </div>
 
+        {/* Modo de uso */}
+        <div className="md-page__section md-usage">
+          <p className="md-page__section-label">Modo de uso</p>
+          <div className="md-usage__grid">
+            <div className="md-usage__step">
+              <span className="md-usage__number">01</span>
+              <span className="md-usage__tag">Mini 30g · En la maleta</span>
+              <h3 className="md-usage__title">Apenas bajas del tatami</h3>
+              <p className="md-usage__body">
+                Lávate las manos y la cara de inmediato, antes de tocar el celular, el carro o a alguien más. La mini viaja en tu maleta de entrenamiento para actuar rápido justo donde el contacto fue directo.
+              </p>
+            </div>
+            <div className="md-usage__step">
+              <span className="md-usage__number">02</span>
+              <span className="md-usage__tag">Grande 120g · En casa</span>
+              <h3 className="md-usage__title">Cuando llegues a casa</h3>
+              <p className="md-usage__body">
+                Báñate por completo con la barra grande para una limpieza profunda de todo el cuerpo, cerrando el ritual que empezaste apenas terminó el roll.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Full-width image */}
         <div className="md-page__full-image">
           <img src={image} alt="Jabón Mat Defence" />
