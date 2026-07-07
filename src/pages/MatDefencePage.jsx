@@ -28,7 +28,7 @@ const athletes = [
     discipline: "MMA",
     weight: "—",
     instagram: null,
-    image: "/mat_defence/cuervo.png",
+    image: "/mat_defence/proximamente.png",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const athletes = [
     discipline: "Grappling",
     weight: "—",
     instagram: null,
-    image: "/mat_defence/cuervo.png",
+    image: "/mat_defence/proximamente.png",
   },
 ];
 
