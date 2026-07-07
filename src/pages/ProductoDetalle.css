@@ -110,6 +110,10 @@
   margin-bottom: 10px;
 }
 
+.detalle__tag {
+  margin-bottom: 12px;
+}
+
 .detalle__tagline {
   font-size: 0.9rem;
   color: var(--stone);
@@ -117,23 +121,95 @@
   letter-spacing: 0.02em;
 }
 
+.detalle__option-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.detalle__size-selector {
+  margin-bottom: 20px;
+}
+
+.detalle__size-options {
+  display: flex;
+  gap: 10px;
+}
+
+.detalle__size-option {
+  padding: 9px 22px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sage-dark);
+  background: transparent;
+  color: var(--sage-dark);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.detalle__size-option:hover {
+  background: rgba(78, 87, 66, 0.1);
+}
+
+.detalle__size-option--active {
+  background: var(--sage-dark);
+  color: var(--cream);
+}
+
 .detalle__price {
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 400;
   color: var(--sage-dark);
-  margin-bottom: 6px;
-}
-
-.detalle__mini-price {
-  font-size: 0.8rem;
-  color: var(--stone);
   margin-bottom: 20px;
 }
 
-.detalle__mini-price strong {
+.detalle__quantity {
+  margin-bottom: 20px;
+}
+
+.detalle__quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  border: 1.5px solid rgba(78, 87, 66, 0.25);
+  border-radius: 100px;
+  padding: 6px 20px;
+}
+
+.detalle__quantity-control button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: var(--sage-dark);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalle__quantity-control button:hover {
   color: var(--terracotta);
-  font-weight: 600;
+}
+
+.detalle__quantity-control span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  min-width: 16px;
+  text-align: center;
 }
 
 .detalle__meta {

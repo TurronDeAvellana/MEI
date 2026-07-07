@@ -14,13 +14,25 @@ function ProductoDetalle() {
 
   const images = [product.image, product.image2].filter(Boolean);
   const [activeImage, setActiveImage] = useState(images[0]);
+  const hasMini = Boolean(product.miniPrice);
+  const [size, setSize] = useState("normal");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     setActiveImage(images[0]);
+    setSize("normal");
+    setQuantity(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
-  const formattedPrice = formatPrice(product.price);
+  const unitPrice = size === "mini" ? product.miniPrice : product.price;
+  const formattedPrice = formatPrice(unitPrice);
+  const sizeLabel = size === "mini" ? "Mini 30g" : "Tamaño original";
+
+  const whatsappMessage = hasMini
+    ? `Hola! Quiero pedir el jabón ${product.name}, tamaño ${sizeLabel}, ${quantity} unidad${quantity > 1 ? "es" : ""}.`
+    : `Hola! Quiero pedir el jabón ${product.name}, ${quantity} unidad${quantity > 1 ? "es" : ""}.`;
+  const whatsappHref = `https://wa.me/573123243726?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <>
@@ -51,14 +63,56 @@ function ProductoDetalle() {
           <div className="detalle__info">
             <span className="detalle__category">{product.category}</span>
             <h1 className="detalle__name">{product.name}</h1>
+            {product.tipo && (
+              <span className="tag-badge detalle__tag">{product.tipo}</span>
+            )}
             <p className="detalle__tagline">{product.tagline}</p>
 
-            <p className="detalle__price">{formattedPrice}</p>
-            {product.miniPrice && (
-              <p className="detalle__mini-price">
-                También disponible en versión mini (30g): <strong>{formatPrice(product.miniPrice)}</strong>
-              </p>
+            {hasMini && (
+              <div className="detalle__size-selector">
+                <span className="detalle__option-label">Tamaño</span>
+                <div className="detalle__size-options">
+                  <button
+                    type="button"
+                    className={`detalle__size-option ${size === "normal" ? "detalle__size-option--active" : ""}`}
+                    onClick={() => setSize("normal")}
+                  >
+                    Original
+                  </button>
+                  <button
+                    type="button"
+                    className={`detalle__size-option ${size === "mini" ? "detalle__size-option--active" : ""}`}
+                    onClick={() => setSize("mini")}
+                  >
+                    Mini 30g
+                  </button>
+                </div>
+              </div>
             )}
+
+            <p className="detalle__price">{formattedPrice}</p>
+
+            <div className="detalle__quantity">
+              <span className="detalle__option-label">Cantidad</span>
+              <div className="detalle__quantity-control">
+                <button
+                  type="button"
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  aria-label="Disminuir cantidad"
+                >
+                  −
+                </button>
+                <span>{quantity}</span>
+                <button
+                  type="button"
+                  onClick={() => setQuantity((q) => q + 1)}
+                  aria-label="Aumentar cantidad"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
             <div className="detalle__meta">
               {product.scent && <span>Aroma: {product.scent}</span>}
               {product.color && <span>Color: {product.color}</span>}
@@ -78,7 +132,7 @@ function ProductoDetalle() {
 
             <a
               className="btn btn--primary detalle__cta"
-              href="https://wa.me/573123243726"
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
             >

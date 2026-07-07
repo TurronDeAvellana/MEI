@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { site } from "../data/site.js";
 import Sprig from "./Sprig.jsx";
+import PropuestaModal from "./PropuestaModal.jsx";
 import "./Amenities.css";
 
 function Amenities() {
   const { title, body, cta } = site.amenities;
+  const [showModal, setShowModal] = useState(false);
 
   const titleWords = title.trim().split(" ");
   const titleAccent = titleWords.pop();
@@ -20,9 +23,10 @@ function Amenities() {
         <em>{titleAccent}</em>
       </h2>
       <p>{body}</p>
-      <a className="btn btn--primary" href={cta.href}>
+      <button className="btn btn--primary" onClick={() => setShowModal(true)}>
         {cta.label}
-      </a>
+      </button>
+      {showModal && <PropuestaModal onClose={() => setShowModal(false)} />}
     </section>
   );
 }

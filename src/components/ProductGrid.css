@@ -97,6 +97,11 @@
   letter-spacing: 0.04em;
 }
 
+.product-card__tag {
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
 .product-card__tagline {
   margin-bottom: 16px;
 }

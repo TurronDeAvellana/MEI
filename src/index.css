@@ -107,6 +107,20 @@ h1, h2, h3, h4 {
   display: inline-block;
 }
 
+/* ── Tag badge (tipo de jabón: bienestar / facial / corporal) ──── */
+.tag-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: var(--terracotta-mist);
+  color: var(--terracotta);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* ── Buttons ──────────────────────────────────────────────────── */
 .btn {
   display: inline-block;

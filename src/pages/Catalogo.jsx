@@ -61,6 +61,9 @@ function Catalogo() {
               </div>
               <div className="product-card__body">
                 <h3>{product.name}</h3>
+                {product.tipo && (
+                  <span className="tag-badge product-card__tag">{product.tipo}</span>
+                )}
                 <p className="product-card__tagline">{product.tagline}</p>
                 <div className="product-card__footer">
                   <div className="product-card__prices">

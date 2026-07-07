@@ -2,7 +2,8 @@ export const products = [
   {
     slug: "hera",
     name: "Hera",
-    tagline: "Bienestar general · Alivia la celulitis y relaja los músculos",
+    tipo: "Bienestar general",
+    tagline: "Alivia la celulitis y relaja los músculos",
     description:
       "Inspirado en la diosa del hogar y la fortaleza, Hera combina manzanilla y romero para brindar una limpieza reconfortante mientras su diseño permite masajear músculos cansados. Ideal para quienes buscan aliviar la tensión después de entrenar o de un día exigente, convirtiendo el cuidado corporal en un verdadero ritual de recuperación.",
     ingredients: ["Manzanilla", "Romero"],
@@ -18,7 +19,8 @@ export const products = [
   {
     slug: "eos",
     name: "EOS",
-    tagline: "Bienestar general · Calma y protege las pieles sensibles",
+    tipo: "Bienestar general",
+    tagline: "Calma y protege las pieles sensibles",
     description:
       "Tan delicado como el amanecer, EOS está formulado con manzanilla para ofrecer una limpieza suave y calmante. Es la elección perfecta para pieles sensibles o con tendencia a la irritación, ayudando a mantener una sensación de confort sin comprometer la hidratación natural.",
     ingredients: ["Manzanilla"],
@@ -35,7 +37,8 @@ export const products = [
   {
     slug: "zeus",
     name: "Zeus",
-    tagline: "Corporal · Frescura antiséptica para el día a día",
+    tipo: "Corporal",
+    tagline: "Frescura antiséptica para el día a día",
     description:
       "La energía de Zeus se refleja en una fórmula revitalizante con eucalipto y hierbabuena. Su efecto refrescante ayuda a despertar el cuerpo, mientras sus propiedades antisépticas y astringentes favorecen una piel más limpia y equilibrada. Ideal después del entrenamiento o para iniciar el día con una sensación de frescura intensa.",
     ingredients: ["Eucalipto", "Hierbabuena"],
@@ -52,7 +55,8 @@ export const products = [
   {
     slug: "hecate",
     name: "Hécate",
-    tagline: "Corporal · Hidrata, exfolia y renueva la piel",
+    tipo: "Corporal",
+    tagline: "Hidrata, exfolia y renueva la piel",
     description:
       "Inspirado en Hécate, símbolo de transformación, este jabón con avena exfolia suavemente mientras hidrata y calma la piel. Su delicado aroma a frambuesa convierte cada ducha en un momento de renovación, dejando la piel luminosa, suave y visiblemente cuidada.",
     ingredients: ["Avena"],
@@ -69,7 +73,8 @@ export const products = [
   {
     slug: "hades",
     name: "Hades",
-    tagline: "Facial · Antifúngico para pieles grasas",
+    tipo: "Facial",
+    tagline: "Antifúngico para pieles grasas",
     description:
       "Diseñado para quienes buscan un cuidado facial profundo, Hades combina romero y aceite de árbol de té para limpiar, purificar y ayudar a controlar el exceso de grasa. Una opción ideal para mantener el rostro fresco, equilibrado y con una apariencia saludable.",
     ingredients: ["Romero", "Aceite de árbol de té"],
@@ -86,7 +91,8 @@ export const products = [
   {
     slug: "artemisa",
     name: "Artemisa",
-    tagline: "Facial · Hidratación floral para el rostro",
+    tipo: "Facial",
+    tagline: "Hidratación floral para el rostro",
     description:
       "Inspirado en la diosa de la naturaleza, Artemisa une pétalos de rosa y anís en una fórmula que hidrata, relaja y cuida delicadamente la piel del rostro. Su aroma suave convierte la rutina facial en un instante de bienestar y autocuidado.",
     ingredients: ["Pétalos de rosa", "Anís"],
@@ -103,7 +109,8 @@ export const products = [
   {
     slug: "eir",
     name: "EIR",
-    tagline: "Bienestar general · Cuida la piel en procesos de recuperación",
+    tipo: "Bienestar general",
+    tagline: "Cuida la piel en procesos de recuperación",
     description:
       "Especialmente elaborado para acompañar el cuidado de la piel durante procesos de recuperación, EIR aprovecha las propiedades calmantes de la caléndula para limpiar con suavidad y brindar una agradable sensación de alivio. Una opción pensada para tratar la piel con el máximo cuidado.",
     ingredients: ["Caléndula"],
