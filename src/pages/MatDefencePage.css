@@ -445,31 +445,6 @@
   margin-bottom: 28px;
 }
 
-/* Benefits grid */
-.md-page__benefits {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.md-page__benefit {
-  border: 1px solid rgba(200, 169, 110, 0.25);
-  padding: 12px 24px;
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--md-crudo);
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.md-page__benefit:hover {
-  border-color: var(--md-kraft);
-  background: rgba(200, 169, 110, 0.08);
-}
-
 /* Features grid */
 .md-page__features {
   display: grid;

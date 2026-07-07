@@ -41,7 +41,7 @@ const athletes = [
 ];
 
 function MatDefencePage() {
-  const { title, body, benefits, logo } = site.matDefence;
+  const { title, body, logo } = site.matDefence;
 
   return (
     <>
@@ -168,16 +168,6 @@ function MatDefencePage() {
                 Báñate por completo con la barra grande para una limpieza profunda de todo el cuerpo, cerrando el ritual que empezaste apenas terminó el roll.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Ingredients */}
-        <div className="md-page__section">
-          <p className="md-page__section-label">Ingredientes Activos</p>
-          <div className="md-page__benefits">
-            {benefits.map((b) => (
-              <div key={b} className="md-page__benefit">{b}</div>
-            ))}
           </div>
         </div>
 
