@@ -64,7 +64,7 @@ function MatDefencePage() {
             <Link to="/" className="md-page__back">← Volver</Link>
             <span className="md-page__eyebrow">Soap Co. · Est. 2024</span>
             <h1 className="md-page__title">Mat<br />Defence</h1>
-            <p className="md-page__tagline">Hecho por grapplers, para grapplers.</p>
+            <p className="md-page__tagline">Hecho por peleadores, para peleadores.</p>
             <p className="md-page__body">{title}</p>
             <p className="md-page__body">{body}</p>
             <a
