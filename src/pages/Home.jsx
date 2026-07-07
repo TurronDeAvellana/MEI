@@ -5,6 +5,7 @@ import ProductGrid from "../components/ProductGrid.jsx";
 import Ingredients from "../components/Ingredients.jsx";
 import Amenities from "../components/Amenities.jsx";
 import MatDefence from "../components/MatDefence.jsx";
+import Contact from "../components/Contact.jsx";
 import Footer from "../components/Footer.jsx";
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
       <Ingredients />
       <Amenities />
       <MatDefence />
+      <Contact />
       <Footer />
     </>
   );

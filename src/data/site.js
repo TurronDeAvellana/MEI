@@ -14,7 +14,7 @@ export const site = {
     { label: "Productos", href: "/catalogo" },
     { label: "Amenities", href: "/#amenities" },
     { label: "Mat Defence", href: "/mat-defence" },
-    { label: "Contacto", href: "/#footer" },
+    { label: "Contacto", href: "/#contacto" },
   ],
   hero: {
     eyebrow: "Inspirados en los dioses. Creados por la naturaleza.",

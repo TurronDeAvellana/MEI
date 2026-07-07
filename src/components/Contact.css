@@ -1,0 +1,46 @@
+.contact {
+  background: var(--terracotta-mist);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.contact h2 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.contact > p {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  opacity: 0.85;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.contact__instagram {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--sage-dark);
+  text-decoration: none;
+}
+
+.contact__instagram:hover {
+  color: var(--terracotta);
+}
