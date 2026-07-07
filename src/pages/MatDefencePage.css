@@ -587,6 +587,20 @@
   margin-bottom: 6px;
 }
 
+.md-athlete__handle {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--md-stone);
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.md-athlete__handle:hover {
+  color: var(--md-kraft);
+}
+
 .md-athlete__meta {
   display: flex;
   gap: 12px;

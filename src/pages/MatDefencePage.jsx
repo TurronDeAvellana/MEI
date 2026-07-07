@@ -222,6 +222,16 @@ function MatDefencePage() {
                       athlete.name
                     )}
                   </h3>
+                  {athlete.instagram && (
+                    <a
+                      href={athlete.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="md-athlete__handle"
+                    >
+                      @{athlete.instagram.replace(/\/$/, "").split("/").pop()}
+                    </a>
+                  )}
                   <div className="md-athlete__meta">
                     <span className="md-athlete__discipline">{athlete.discipline}</span>
                     {athlete.weight !== "—" && (
