@@ -16,10 +16,10 @@ const features = [
 const athletes = [
   {
     id: 1,
-    name: "Próximamente",
-    discipline: "BJJ",
+    name: "Juan Jose Muñoz",
+    discipline: "MMA",
     weight: "—",
-    instagram: null,
+    instagram: "https://www.instagram.com/tarzanmma_munoz/",
     image: "/mat_defence/cuervo.png",
   },
   {
@@ -204,22 +204,24 @@ function MatDefencePage() {
             {athletes.map((athlete) => (
               <div key={athlete.id} className="md-athlete">
                 <div className="md-athlete__image-wrap">
-                  <img src={athlete.image} alt={athlete.name} />
-                  <div className="md-athlete__overlay">
-                    {athlete.instagram && (
-                      <a
-                        href={`https://instagram.com/${athlete.instagram.replace("@", "")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="md-athlete__ig"
-                      >
-                        {athlete.instagram}
-                      </a>
-                    )}
-                  </div>
+                  {athlete.instagram ? (
+                    <a href={athlete.instagram} target="_blank" rel="noopener noreferrer">
+                      <img src={athlete.image} alt={athlete.name} />
+                    </a>
+                  ) : (
+                    <img src={athlete.image} alt={athlete.name} />
+                  )}
                 </div>
                 <div className="md-athlete__info">
-                  <h3 className="md-athlete__name">{athlete.name}</h3>
+                  <h3 className="md-athlete__name">
+                    {athlete.instagram ? (
+                      <a href={athlete.instagram} target="_blank" rel="noopener noreferrer">
+                        {athlete.name}
+                      </a>
+                    ) : (
+                      athlete.name
+                    )}
+                  </h3>
                   <div className="md-athlete__meta">
                     <span className="md-athlete__discipline">{athlete.discipline}</span>
                     {athlete.weight !== "—" && (
