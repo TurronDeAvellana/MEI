@@ -51,7 +51,7 @@ export default function Links() {
     <div className="links-page">
       {/* Background blurred */}
       <div className="links-page__bg" aria-hidden="true">
-        <img src="/mei/productos/hero1.png" alt="" />
+        <img src="/mei/productos/hero1.jpg" alt="" />
       </div>
       <div className="links-page__overlay" aria-hidden="true" />
 
