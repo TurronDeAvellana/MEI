@@ -7,7 +7,7 @@ export const site = {
   contact: {
     email: "mei@meimagic.co",
     whatsapp: "+573123243726",
-    instagram: "@meimagic.co",
+    instagram: "@mei_magic_111",
   },
   nav: [
     { label: "Inicio", href: "/#hero" },
