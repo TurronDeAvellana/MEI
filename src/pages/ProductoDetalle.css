@@ -233,45 +233,195 @@
   margin-bottom: 36px;
 }
 
-/* Ingredients */
-.detalle__ingredients h2 {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--sage-dark);
-  margin-bottom: 14px;
-}
-
-.detalle__ingredients ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 40px;
-}
-
-.detalle__ingredients li {
-  background: var(--cream-deep);
-  border: 1px solid rgba(78, 87, 66, 0.18);
-  color: var(--sage-dark);
-  border-radius: 100px;
-  padding: 7px 18px;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-}
-
 .detalle__cta {
   display: inline-block;
   text-decoration: none;
+}
+
+/* Quick jump nav */
+.detalle__jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(78, 87, 66, 0.12);
+}
+
+.detalle__jump a {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sage-dark);
+  color: var(--sage-dark);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.detalle__jump a:hover {
+  background: var(--sage-dark);
+  color: var(--cream);
+}
+
+/* Deep sections */
+.detalle__deep {
+  margin-top: 8px;
+}
+
+.detalle__block {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(78, 87, 66, 0.12);
+}
+
+.detalle__block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detalle__block .section-label {
+  margin-bottom: 14px;
+}
+
+.detalle__block h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+/* Ingredients */
+.detalle__ingredient-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.detalle__ingredient-card {
+  background: var(--cream-deep);
+  border: 1px solid rgba(78, 87, 66, 0.14);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.detalle__ingredient-name {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--terracotta);
+  margin-bottom: 6px;
+}
+
+.detalle__ingredient-benefit {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  line-height: 1.65;
+  opacity: 0.85;
+}
+
+/* Modo de uso */
+.detalle__steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 640px;
+}
+
+.detalle__steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+.detalle__steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage-dark);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+/* Cuidados */
+.detalle__care-intro {
+  font-size: 0.9rem;
+  color: var(--stone);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.detalle__care-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+.detalle__care-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.detalle__care-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(78, 87, 66, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sage-dark);
+}
+
+.detalle__care-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.detalle__care-item h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+  margin-bottom: 4px;
+}
+
+.detalle__care-item p {
+  font-size: 0.82rem;
+  color: var(--stone);
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
   .detalle__layout {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
+  }
+}
+
+@media (min-width: 600px) {
+  .detalle__ingredient-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detalle__care-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

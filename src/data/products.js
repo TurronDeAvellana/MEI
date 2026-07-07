@@ -7,6 +7,11 @@ export const products = [
     description:
       "Inspirado en la diosa del hogar y la fortaleza, Hera combina manzanilla y romero para brindar una limpieza reconfortante mientras su diseño permite masajear músculos cansados. Ideal para quienes buscan aliviar la tensión después de entrenar o de un día exigente, convirtiendo el cuidado corporal en un verdadero ritual de recuperación.",
     ingredients: ["Manzanilla", "Romero"],
+    modoUso: [
+      "Humedece el jabón y masajea directamente sobre piernas, glúteos o zonas con tensión muscular.",
+      "Realiza movimientos circulares durante unos segundos para estimular la piel antes de enjuagar.",
+      "Ideal después del entrenamiento o en la ducha nocturna, como parte de tu ritual de recuperación.",
+    ],
     category: "corporal",
     linea: "bienestar",
     price: 30000,
@@ -24,6 +29,11 @@ export const products = [
     description:
       "Tan delicado como el amanecer, EOS está formulado con manzanilla para ofrecer una limpieza suave y calmante. Es la elección perfecta para pieles sensibles o con tendencia a la irritación, ayudando a mantener una sensación de confort sin comprometer la hidratación natural.",
     ingredients: ["Manzanilla"],
+    modoUso: [
+      "Humedece el jabón entre tus manos hasta generar una espuma suave.",
+      "Aplica con movimientos suaves sobre el rostro o el cuerpo, evitando el contorno de ojos.",
+      "Enjuaga con agua tibia y seca con toques suaves; puedes usarlo a diario.",
+    ],
     category: "facial · corporal",
     linea: "bienestar",
     price: 15000,
@@ -42,6 +52,11 @@ export const products = [
     description:
       "La energía de Zeus se refleja en una fórmula revitalizante con eucalipto y hierbabuena. Su efecto refrescante ayuda a despertar el cuerpo, mientras sus propiedades antisépticas y astringentes favorecen una piel más limpia y equilibrada. Ideal después del entrenamiento o para iniciar el día con una sensación de frescura intensa.",
     ingredients: ["Eucalipto", "Hierbabuena"],
+    modoUso: [
+      "Humedece el jabón y frota sobre el cuerpo hasta generar espuma.",
+      "Concéntrate en las zonas de mayor sudoración para aprovechar su efecto antiséptico.",
+      "Enjuaga con agua fresca para potenciar la sensación revitalizante.",
+    ],
     category: "corporal · hombre",
     linea: "masculina",
     price: 20000,
@@ -60,6 +75,11 @@ export const products = [
     description:
       "Inspirado en Hécate, símbolo de transformación, este jabón con avena exfolia suavemente mientras hidrata y calma la piel. Su delicado aroma a frambuesa convierte cada ducha en un momento de renovación, dejando la piel luminosa, suave y visiblemente cuidada.",
     ingredients: ["Avena"],
+    modoUso: [
+      "Humedece la piel y el jabón con agua tibia.",
+      "Masajea en movimientos circulares para aprovechar el efecto exfoliante de la avena.",
+      "Enjuaga bien y sella la hidratación con tu crema corporal favorita.",
+    ],
     category: "corporal · mujer",
     linea: "femenina",
     price: 16000,
@@ -78,6 +98,11 @@ export const products = [
     description:
       "Diseñado para quienes buscan un cuidado facial profundo, Hades combina romero y aceite de árbol de té para limpiar, purificar y ayudar a controlar el exceso de grasa. Una opción ideal para mantener el rostro fresco, equilibrado y con una apariencia saludable.",
     ingredients: ["Romero", "Aceite de árbol de té"],
+    modoUso: [
+      "Humedece el rostro con agua tibia y frota el jabón entre las manos.",
+      "Aplica la espuma con movimientos circulares, evitando el contorno de ojos.",
+      "Enjuaga con abundante agua; úsalo mañana y noche para controlar el exceso de grasa.",
+    ],
     category: "facial · hombre",
     linea: "masculina",
     price: 15000,
@@ -96,6 +121,11 @@ export const products = [
     description:
       "Inspirado en la diosa de la naturaleza, Artemisa une pétalos de rosa y anís en una fórmula que hidrata, relaja y cuida delicadamente la piel del rostro. Su aroma suave convierte la rutina facial en un instante de bienestar y autocuidado.",
     ingredients: ["Pétalos de rosa", "Anís"],
+    modoUso: [
+      "Humedece el rostro y genera una espuma suave entre tus manos.",
+      "Aplica con movimientos circulares y deja actuar unos segundos para liberar su aroma floral.",
+      "Enjuaga con agua tibia y continúa con tu rutina de hidratación habitual.",
+    ],
     category: "facial · mujer",
     linea: "femenina",
     price: 15000,
@@ -114,6 +144,11 @@ export const products = [
     description:
       "Especialmente elaborado para acompañar el cuidado de la piel durante procesos de recuperación, EIR aprovecha las propiedades calmantes de la caléndula para limpiar con suavidad y brindar una agradable sensación de alivio. Una opción pensada para tratar la piel con el máximo cuidado.",
     ingredients: ["Caléndula"],
+    modoUso: [
+      "Humedece suavemente la zona a tratar con agua tibia.",
+      "Aplica el jabón con movimientos delicados, sin frotar en exceso zonas sensibles.",
+      "Enjuaga con agua tibia y seca dando toques suaves con una toalla limpia.",
+    ],
     category: "tratamiento",
     price: 20000,
     miniPrice: 5000,
@@ -130,6 +165,11 @@ export const products = [
     description:
       "Jabón artesanal de glicerina desarrollado para deportistas de contacto, con propiedades antibacteriales. Su fórmula combina carbón activado y árbol de té para una limpieza profunda después del entrenamiento.",
     ingredients: ["Carbón activado", "Árbol de té", "Aceite de coco", "Vitamina E"],
+    modoUso: [
+      "Úsalo después de cada entrenamiento para una limpieza profunda.",
+      "Genera espuma sobre la piel húmeda y masajea manos, cuello y pies.",
+      "Enjuaga con agua abundante para eliminar bacterias y sudor acumulado.",
+    ],
     category: "tratamiento",
     price: 25000,
     scent: null,

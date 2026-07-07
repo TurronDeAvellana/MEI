@@ -1,0 +1,15 @@
+export const ingredientBenefits = {
+  "Manzanilla": "Calma la piel y ayuda a reducir irritaciones; ideal para pieles sensibles.",
+  "Romero": "Estimula la circulación y aporta una acción purificante natural.",
+  "Eucalipto": "Refresca la piel y despierta los sentidos con su aroma mentolado.",
+  "Hierbabuena": "Aporta una sensación de frescura intensa e instantánea.",
+  "Avena": "Exfolia suavemente mientras hidrata, dejando la piel más suave.",
+  "Aceite de árbol de té": "Reconocido por sus propiedades antibacteriales y purificantes.",
+  "Árbol de té": "Antibacterial natural que ayuda a mantener la piel protegida.",
+  "Pétalos de rosa": "Hidratan y aportan una suavidad floral a la piel.",
+  "Anís": "Aroma relajante con propiedades calmantes para la piel.",
+  "Caléndula": "Propiedades calmantes y reparadoras, ideal para pieles en recuperación.",
+  "Carbón activado": "Absorbe impurezas y toxinas para una limpieza profunda.",
+  "Aceite de coco": "Nutre e hidrata profundamente la piel.",
+  "Vitamina E": "Antioxidante que ayuda a proteger y regenerar la piel.",
+};
