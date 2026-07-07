@@ -91,9 +91,9 @@ function MatDefencePage() {
               Para quienes lo dan todo en el tatami. Elaborado artesanalmente con aceite de árbol de té y romero — dos de los agentes naturales más potentes contra hongos e infecciones cutáneas como tiña, estafilococo y molusco contagioso. Porque tu piel también entrena.
             </p>
             <div className="md-page__fight-card-tags">
-              <span>Antibacterial</span>
-              <span>Natural</span>
-              <span>120g / 30g</span>
+              <span>Aceite de Árbol de Té</span>
+              <span>Romero</span>
+              <span>Vitamina C</span>
             </div>
           </div>
         </div>

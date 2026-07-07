@@ -46,7 +46,7 @@ export const site = {
   matDefence: {
     title: "La higiene también es parte del entrenamiento",
     body: "Jabón artesanal desarrollado para deportistas de contacto.",
-    benefits: ["Carbón Activado", "Árbol de Té", "Aceite de Coco", "Vitamina E"],
+    benefits: ["Aceite de Árbol de Té", "Romero", "Vitamina C"],
     logo: "/mat_defence/logoblanco.png",
     image: "/src/assets/mat-defence/mat-defence.jpg",
   },
