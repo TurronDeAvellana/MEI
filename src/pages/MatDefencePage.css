@@ -423,37 +423,6 @@
   max-width: 420px;
 }
 
-/* Full-width image */
-.md-page__full-image {
-  position: relative;
-  margin: 0;
-}
-
-.md-page__full-image img {
-  width: 100%;
-  aspect-ratio: 21 / 8;
-  object-fit: cover;
-  filter: contrast(1.08) saturate(0.8);
-  display: block;
-}
-
-.md-page__image-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 14px 6%;
-  background: rgba(17, 17, 17, 0.72);
-  backdrop-filter: blur(6px);
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--md-kraft);
-  text-align: center;
-}
-
 /* Content sections */
 .md-page__section {
   padding: 56px 6%;

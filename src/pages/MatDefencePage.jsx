@@ -41,7 +41,7 @@ const athletes = [
 ];
 
 function MatDefencePage() {
-  const { title, body, benefits, image, logo } = site.matDefence;
+  const { title, body, benefits, logo } = site.matDefence;
 
   return (
     <>
@@ -169,12 +169,6 @@ function MatDefencePage() {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Full-width image */}
-        <div className="md-page__full-image">
-          <img src={image} alt="Jabón Mat Defence" />
-          <div className="md-page__image-label">120G · Jabón Artesanal Antibacterial · For Grapplers</div>
         </div>
 
         {/* Ingredients */}
