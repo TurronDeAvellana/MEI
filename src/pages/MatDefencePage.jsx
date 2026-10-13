@@ -99,7 +99,7 @@ function MatDefencePage() {
             <div className="md-page__fight-card-tags">
               <span>Aceite de Árbol de Té</span>
               <span>Romero</span>
-              <span>Vitamina C</span>
+              <span>Vitamina E</span>
             </div>
           </div>
         </div>

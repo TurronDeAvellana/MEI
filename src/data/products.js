@@ -171,7 +171,7 @@ export const products = [
       "Enjuaga con agua abundante para eliminar bacterias y sudor acumulado.",
     ],
     category: "tratamiento",
-    price: 25000,
+    price: 15000,
     scent: null,
     color: null,
     image: "/mat_defence/jabon-mat-defence-grande.webp",
