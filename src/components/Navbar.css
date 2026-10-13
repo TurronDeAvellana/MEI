@@ -1,20 +1,24 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: var(--z-nav);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 6%;
-  background: rgba(78, 87, 66, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  gap: var(--space-6);
+  padding: 14px var(--gutter);
+  /* Translucent material: content scrolls under the bar */
+  --focus-ring: var(--cream);
+  background: rgba(78, 87, 66, 0.84);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(244, 239, 232, 0.06);
+  transition: border-color var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
 }
 
 .navbar--scrolled {
-  background: rgba(78, 87, 66, 0.98);
+  background: rgba(78, 87, 66, 0.9);
+  box-shadow: 0 8px 24px -16px rgba(42, 42, 42, 0.45);
   border-bottom-color: rgba(244, 239, 232, 0.14);
 }
 
@@ -25,10 +29,12 @@
   justify-content: center;
   text-decoration: none;
   position: relative;
-  z-index: 1001;
-  width: 44px;
-  height: 44px;
+  z-index: var(--z-base);
+  flex-shrink: 0;
+  width: var(--tap);
+  height: var(--tap);
   padding: 7px;
+  box-shadow: 0 0 0 1px rgba(244, 239, 232, 0.4), 0 2px 8px -2px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   background: var(--cream);
 }
@@ -42,35 +48,42 @@
 /* Desktop links */
 .navbar__links {
   display: flex;
-  gap: 36px;
+  align-items: center;
+  gap: var(--space-7);
   list-style: none;
 }
 
 .navbar__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--cream);
-  opacity: 0.8;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  opacity: 0.88;
+  transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
 
-.navbar__links a:hover {
-  opacity: 1;
-  color: var(--terracotta);
+@media (hover: hover) and (pointer: fine) {
+  .navbar__links a:hover {
+    opacity: 1;
+    color: var(--terracotta);
+  }
 }
 
 /* Dark variant — Mat Defence */
 .navbar--dark {
-  background: rgba(17, 17, 17, 0.88);
+  --focus-ring: var(--md-kraft);
+  background: rgba(17, 17, 17, 0.8);
   border-bottom-color: rgba(200, 169, 110, 0.12);
 }
 
 .navbar--dark.navbar--scrolled {
-  background: rgba(17, 17, 17, 0.98);
+  background: rgba(17, 17, 17, 0.9);
   border-bottom-color: rgba(200, 169, 110, 0.2);
 }
 
@@ -78,9 +91,11 @@
   color: var(--md-crudo);
 }
 
-.navbar--dark .navbar__links a:hover {
-  color: var(--md-kraft);
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .navbar--dark .navbar__links a:hover {
+    color: var(--md-kraft);
+    opacity: 1;
+  }
 }
 
 .navbar--dark .navbar__burger span {
@@ -93,14 +108,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
+  width: var(--tap);
+  height: var(--tap);
+  margin-right: -10px; /* optical: keep the bars aligned to the gutter */
   background: none;
   border: none;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  padding: 4px;
+  padding: 10px;
   position: relative;
-  z-index: 1001;
+  z-index: var(--z-base);
 }
 
 .navbar__burger span {
@@ -109,7 +126,7 @@
   background: var(--cream);
   border-radius: 2px;
   transform-origin: center;
-  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out), width var(--dur-base) var(--ease-out);
 }
 
 .navbar__burger span:nth-child(1) { width: 24px; }
@@ -138,17 +155,22 @@
   bottom: 0;
   width: min(80vw, 300px);
   background: var(--sage-dark);
-  z-index: 1000;
-  padding: 100px 36px 48px;
+  --focus-ring: var(--cream);
+  z-index: var(--z-drawer);
+  padding: 96px var(--space-7) var(--space-9);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -8px 0 40px rgba(0,0,0,0.3);
+  visibility: hidden;
+  transition: transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out), visibility 0s linear var(--dur-slow);
+  box-shadow: none;
 }
 
 .navbar__drawer--open {
   transform: translateX(0);
+  visibility: visible;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.3);
+  transition-delay: 0s;
 }
 
 .navbar__drawer-links {
@@ -164,26 +186,30 @@
 
 .navbar__drawer-links a {
   display: block;
-  padding: 18px 0;
+  padding: var(--space-4) 0;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: var(--text-xl);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: var(--tracking-heading);
   text-decoration: none;
   color: var(--cream);
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
 }
 
-.navbar__drawer-links a:hover {
-  color: var(--terracotta);
-  padding-left: 8px;
+@media (hover: hover) and (pointer: fine) {
+  .navbar__drawer-links a:hover {
+    color: var(--terracotta);
+    transform: translateX(8px);
+  }
 }
 
 /* Backdrop */
 .navbar__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(42, 42, 42, 0.4);
-  z-index: 998;
+  background: rgba(42, 42, 42, 0.45);
+  z-index: var(--z-backdrop);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
@@ -193,3 +219,45 @@
   .navbar__links { display: none; }
   .navbar__burger { display: flex; }
 }
+
+@media (prefers-reduced-transparency: reduce) {
+  .navbar,
+  .navbar--scrolled { background: var(--sage-dark); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .navbar--dark,
+  .navbar--dark.navbar--scrolled { background: var(--md-black); }
+}
+
+@media (prefers-contrast: more) {
+  .navbar__links a { opacity: 1; }
+}
+
+/* ── Motion ───────────────────────────────────────────────────── */
+.navbar__backdrop { animation: navbar-fade-in var(--dur-base) var(--ease-out); }
+
+@keyframes navbar-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Drawer links rise in, staggered, after the panel starts sliding */
+.navbar__drawer-links li {
+  opacity: 0;
+  transform: translateX(14px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.navbar__drawer--open .navbar__drawer-links li {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(80ms + var(--i, 0) * 45ms);
+}
+
+.navbar__drawer-links li:nth-child(1) { --i: 0; }
+.navbar__drawer-links li:nth-child(2) { --i: 1; }
+.navbar__drawer-links li:nth-child(3) { --i: 2; }
+.navbar__drawer-links li:nth-child(4) { --i: 3; }
+.navbar__drawer-links li:nth-child(5) { --i: 4; }
+.navbar__drawer-links li:nth-child(6) { --i: 5; }
+
+.navbar__links a:active,
+.navbar__drawer-links a:active { opacity: 0.7; }

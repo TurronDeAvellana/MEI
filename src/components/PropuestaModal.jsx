@@ -1,8 +1,27 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { site } from "../data/site.js";
 import "./PropuestaModal.css";
 
-function PropuestaModal({ onClose }) {
+const EXIT_MS = 160;
+
+function PropuestaModal({ onClose: onCloseProp }) {
+  const [closing, setClosing] = useState(false);
+  const timer = useRef(null);
+
+  // Play a short exit animation before unmounting (skipped for reduced motion)
+  const onClose = useCallback(() => {
+    if (timer.current) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      onCloseProp();
+      return;
+    }
+    setClosing(true);
+    timer.current = setTimeout(onCloseProp, EXIT_MS);
+  }, [onCloseProp]);
+
+  useEffect(() => () => clearTimeout(timer.current), []);
+
   useEffect(() => {
     const onKeyDown = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKeyDown);
@@ -23,7 +42,7 @@ function PropuestaModal({ onClose }) {
   )}`;
 
   return (
-    <div className="propuesta-modal__overlay" onClick={onClose}>
+    <div className={`propuesta-modal__overlay${closing ? " is-closing" : ""}`} onClick={onClose}>
       <div
         className="propuesta-modal"
         role="dialog"

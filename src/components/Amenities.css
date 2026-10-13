@@ -1,19 +1,21 @@
 .amenities {
+  --focus-ring: var(--cream);
   background: var(--sage-dark);
   color: var(--cream);
   text-align: center;
 }
 
 .amenities .eyebrow {
-  color: var(--terracotta);
-  opacity: 0.9;
+  color: var(--terracotta-light);
 }
 
 .amenities h2 {
   color: var(--cream);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: var(--display-lg);
   font-weight: 300;
-  margin-bottom: 16px;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-bottom: var(--space-4);
 }
 
 .amenities h2 em {
@@ -22,18 +24,42 @@
 }
 
 .amenities > p {
-  max-width: 520px;
-  margin: 0 auto 36px;
-  font-size: 0.9rem;
-  line-height: 1.75;
-  opacity: 0.82;
+  max-width: 34rem;
+  margin: 0 auto var(--space-8);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  opacity: 0.86;
 }
 
 .amenities .btn--primary {
-  background: var(--terracotta);
+  background: var(--terracotta-deep);
   color: var(--white);
 }
 
-.amenities .btn--primary:hover {
-  background: #b87a5a;
+@media (hover: hover) and (pointer: fine) {
+  .amenities .btn--primary:hover {
+    background: var(--terracotta-press);
+  }
+}
+
+.amenities__more {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+  width: fit-content;
+  margin: var(--space-4) auto 0;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  opacity: 0.85;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .amenities__more:hover {
+    opacity: 1;
+    color: var(--terracotta-light);
+  }
 }

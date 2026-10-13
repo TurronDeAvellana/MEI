@@ -4,37 +4,42 @@
 }
 
 .ingredients .section-label {
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 .ingredients > h2 {
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-size: var(--display-md);
   font-weight: 300;
-  margin-bottom: 36px;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-bottom: var(--space-8);
 }
 
 .ingredients > h2 em {
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--terracotta-accent);
 }
 
 .ingredients__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: var(--space-3);
 }
 
 .ingredient-card {
   background: var(--cream);
-  padding: 28px 16px 24px;
-  border-radius: 20px;
-  border: 1px solid rgba(78, 87, 66, 0.1);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  padding: var(--space-6) var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
 }
 
-.ingredient-card:hover {
-  border-color: var(--terracotta);
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .ingredient-card:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-4px);
+  }
 }
 
 .ingredient-card__icon {
@@ -47,13 +52,16 @@
   color: var(--sage-dark);
   background: radial-gradient(circle, rgba(201, 138, 104, 0.16) 0%, rgba(201, 138, 104, 0) 72%);
   border-radius: 50%;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-3);
 }
 
 .ingredient-card p {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  overflow-wrap: anywhere;
+  hyphens: auto;
   text-transform: uppercase;
   color: var(--sage-dark);
 }
@@ -61,5 +69,10 @@
 @media (min-width: 768px) {
   .ingredients__grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+  }
+
+  .ingredient-card {
+    padding: var(--space-7) var(--space-4) var(--space-6);
   }
 }

@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { site } from "../data/site.js";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
+import Faq from "../components/Faq.jsx";
+import { faqs } from "../data/faq.js";
+import { imgSize } from "../data/imageSizes.js";
 import "./MatDefencePage.css";
 
 const disciplines = ["BJJ", "Judo", "Lucha", "MMA", "Grappling"];
@@ -20,7 +23,7 @@ const athletes = [
     discipline: "MMA",
     weight: "—",
     instagram: "https://www.instagram.com/tarzanmma_munoz/",
-    image: "/mat_defence/cuervo.png",
+    image: "/mat_defence/deportista-mat-defence-cuervo.webp",
   },
   {
     id: 2,
@@ -28,7 +31,7 @@ const athletes = [
     discipline: "MMA",
     weight: "—",
     instagram: null,
-    image: "/mat_defence/proximamente.png",
+    image: "/mat_defence/proximamente-mat-defence.webp",
   },
   {
     id: 3,
@@ -36,12 +39,13 @@ const athletes = [
     discipline: "Grappling",
     weight: "—",
     instagram: null,
-    image: "/mat_defence/proximamente.png",
+    image: "/mat_defence/proximamente-mat-defence.webp",
   },
 ];
 
 function MatDefencePage() {
-  const { title, body, logo } = site.matDefence;
+  const { title, body } = site.matDefence;
+  const { subtitle, intro, faqEyebrow, faqTitle } = site.matDefencePage;
 
   return (
     <>
@@ -64,9 +68,11 @@ function MatDefencePage() {
             <Link to="/" className="md-page__back">← Volver</Link>
             <span className="md-page__eyebrow">Soap Co. · Est. 2024</span>
             <h1 className="md-page__title">Mat<br />Defence</h1>
+            <p className="md-page__subtitle">{subtitle}</p>
             <p className="md-page__tagline">Hecho por peleadores, para peleadores.</p>
             <p className="md-page__body">{title}</p>
             <p className="md-page__body">{body}</p>
+            <p className="md-page__body">{intro}</p>
             <a
               className="md-page__cta"
               href={`https://wa.me/${site.contact.whatsapp.replace(/\D/g, "")}`}
@@ -77,13 +83,13 @@ function MatDefencePage() {
             </a>
           </div>
           <div className="md-page__hero-image">
-            <img src="/mat_defence/matdefence.png" alt="Jabón Mat Defence en el gym" />
+            <img src="/mat_defence/jabon-mat-defence-gimnasio.webp" alt="Jabón artesanal Mat Defence de árbol de té y romero para deportistas de combate" {...imgSize("/mat_defence/jabon-mat-defence-gimnasio.webp")} fetchpriority="high" decoding="async" />
           </div>
         </div>
 
         {/* Full-width fight image */}
         <div className="md-page__fight">
-          <img src="/mat_defence/cuervo2.png" alt="Pelea Mat Defence" />
+          <img src="/mat_defence/pelea-mat-defence-cuervo.webp" alt="Peleadores en el tatami: Mat Defence, jabón artesanal para atletas" {...imgSize("/mat_defence/pelea-mat-defence-cuervo.webp")} loading="lazy" decoding="async" />
           <div className="md-page__fight-card">
             <span className="md-page__fight-card-eyebrow">Mat Defence Soap Co.</span>
             <h3 className="md-page__fight-card-title">El jabón para peleadores</h3>
@@ -104,7 +110,7 @@ function MatDefencePage() {
           <div className="md-products__grid">
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/matdefencegrande.jpeg" alt="Mat Defence Grande" />
+                <img src="/mat_defence/jabon-mat-defence-grande.webp" alt="Mat Defence Grande, jabón artesanal de 120 g con árbol de té y romero" {...imgSize("/mat_defence/jabon-mat-defence-grande.webp")} loading="lazy" decoding="async" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">120 g</span>
@@ -126,7 +132,7 @@ function MatDefencePage() {
 
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/matdefencechico.png" alt="Mat Defence Mini" />
+                <img src="/mat_defence/jabon-mat-defence-chico.webp" alt="Mat Defence Mini, jabón artesanal de 30 g tamaño viaje para el gym" {...imgSize("/mat_defence/jabon-mat-defence-chico.webp")} loading="lazy" decoding="async" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">30 g</span>
@@ -196,10 +202,10 @@ function MatDefencePage() {
                 <div className="md-athlete__image-wrap">
                   {athlete.instagram ? (
                     <a href={athlete.instagram} target="_blank" rel="noopener noreferrer">
-                      <img src={athlete.image} alt={athlete.name} />
+                      <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image)} loading="lazy" decoding="async" />
                     </a>
                   ) : (
-                    <img src={athlete.image} alt={athlete.name} />
+                    <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image)} loading="lazy" decoding="async" />
                   )}
                 </div>
                 <div className="md-athlete__info">
@@ -233,6 +239,8 @@ function MatDefencePage() {
             ))}
           </div>
         </div>
+
+        <Faq id="faq" variant="dark" eyebrow={faqEyebrow} title={faqTitle} items={faqs.matDefence} />
 
         {/* Bottom strip */}
         <div className="md-page__footer-strip">

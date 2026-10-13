@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { site } from "../data/site.js";
 import Sprig from "./Sprig.jsx";
 import PropuestaModal from "./PropuestaModal.jsx";
 import "./Amenities.css";
 
 function Amenities() {
-  const { title, body, cta } = site.amenities;
+  const { title, body, cta, link } = site.amenities;
   const [showModal, setShowModal] = useState(false);
 
   const titleWords = title.trim().split(" ");
@@ -26,6 +27,9 @@ function Amenities() {
       <button className="btn btn--primary" onClick={() => setShowModal(true)}>
         {cta.label}
       </button>
+      <Link className="amenities__more" to={link.href}>
+        {link.label} →
+      </Link>
       {showModal && <PropuestaModal onClose={() => setShowModal(false)} />}
     </section>
   );

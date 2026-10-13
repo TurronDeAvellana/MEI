@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { site } from "../data/site.js";
 import Sprig from "./Sprig.jsx";
+import { imgSize } from "../data/imageSizes.js";
 import "./Footer.css";
 
 function Footer() {
@@ -13,7 +14,7 @@ function Footer() {
 
         {/* Marca */}
         <div className="footer__brand">
-          <img src={site.logo} alt={site.name} className="footer__logo" />
+          <img src={site.logo} alt="Logo MEI Magic, jabones artesanales" className="footer__logo" {...imgSize(site.logo)} loading="lazy" decoding="async" />
           <Sprig className="footer__sprig" />
           <p className="footer__tagline">{site.tagline}</p>
           <div className="footer__socials">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { site } from "../data/site.js";
+import { imgSize } from "../data/imageSizes.js";
 import "./Navbar.css";
 
 function NavLink({ item, onClick }) {
@@ -34,7 +35,7 @@ function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""} ${isDark ? "navbar--dark" : ""}`}>
         <Link className="navbar__logo" to="/" onClick={close}>
-          <img src={site.logo} alt={site.name} />
+          <img src={site.logo} alt="MEI Magic – jabones artesanales" {...imgSize(site.logo)} decoding="async" />
         </Link>
 
         {/* Desktop links */}
