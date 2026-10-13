@@ -1,3 +1,5 @@
+import { site } from "./site.js";
+
 export const siteUrl = "https://mei.portafoliodev.com";
 export const siteName = "MEI";
 export const locale = "es_CO";
@@ -9,6 +11,7 @@ export const business = {
   telephone: "+573123243726",
   email: "mei@meimagic.co",
   instagram: "https://www.instagram.com/mei_magic_111/",
+  googleMaps: site.contact.googleMaps,
   logo: "/mei/logo-512.png",
   city: "Cali",
   region: "Valle del Cauca",

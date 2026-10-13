@@ -34,7 +34,8 @@ export function businessSchema() {
       "@type": name === "Colombia" ? "Country" : name === "Cali" ? "City" : "AdministrativeArea",
       name,
     })),
-    sameAs: [business.instagram],
+    hasMap: business.googleMaps,
+    sameAs: [business.instagram, business.googleMaps],
     contactPoint: [
       {
         "@type": "ContactPoint",

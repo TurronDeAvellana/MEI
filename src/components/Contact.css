@@ -33,7 +33,8 @@
   margin-bottom: var(--space-4);
 }
 
-.contact__instagram {
+.contact__instagram,
+.contact__review {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
@@ -47,7 +48,8 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .contact__instagram:hover {
+  .contact__instagram:hover,
+  .contact__review:hover {
     color: var(--terracotta-ink);
   }
 }

@@ -5,7 +5,7 @@ import { imgSize } from "../data/imageSizes.js";
 import "./Footer.css";
 
 function Footer() {
-  const { email, whatsapp, instagram } = site.contact;
+  const { email, whatsapp, instagram, googleReview } = site.contact;
   const year = new Date().getFullYear();
 
   return (
@@ -63,6 +63,11 @@ function Footer() {
             <li>
               <a href={`https://instagram.com/${instagram.replace("@", "")}`} target="_blank" rel="noopener noreferrer">
                 {instagram}
+              </a>
+            </li>
+            <li>
+              <a href={googleReview} target="_blank" rel="noopener noreferrer">
+                Reseñas en Google
               </a>
             </li>
           </ul>

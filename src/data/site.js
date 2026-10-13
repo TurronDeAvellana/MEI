@@ -8,6 +8,9 @@ export const site = {
     email: "mei@meimagic.co",
     whatsapp: "+573123243726",
     instagram: "@mei_magic_111",
+    // Perfil de Empresa en Google (cid estable; el link corto de "Compartir" redirige aquí).
+    googleMaps: "https://www.google.com/maps?cid=4232748710862823609",
+    googleReview: "https://g.page/r/CbmgeMaGvr06EBM/review",
   },
   nav: [
     { label: "Inicio", href: "/#hero" },

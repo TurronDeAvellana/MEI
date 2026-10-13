@@ -3,7 +3,7 @@ import Sprig from "./Sprig.jsx";
 import "./Contact.css";
 
 function Contact() {
-  const { email, whatsapp, instagram } = site.contact;
+  const { email, whatsapp, instagram, googleReview } = site.contact;
   const whatsappHref = `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
   const instagramHref = `https://instagram.com/${instagram.replace("@", "")}`;
 
@@ -39,6 +39,14 @@ function Contact() {
         rel="noopener noreferrer"
       >
         {instagram}
+      </a>
+      <a
+        className="contact__review"
+        href={googleReview}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ★ Déjanos una reseña en Google
       </a>
     </section>
   );

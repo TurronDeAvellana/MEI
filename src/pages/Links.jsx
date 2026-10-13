@@ -28,6 +28,14 @@ const links = [
     highlight: false,
   },
   {
+    id: "resena",
+    label: "Déjanos una reseña",
+    description: "Cuéntanos qué te pareció en Google",
+    href: site.contact.googleReview,
+    emoji: "⭐",
+    highlight: false,
+  },
+  {
     id: "correo",
     label: "Correo",
     description: site.contact.email,
