@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Faq from "../components/Faq.jsx";
 import { faqs } from "../data/faq.js";
-import { imgSize } from "../data/imageSizes.js";
+import { imgSize, SIZES } from "../data/imageSizes.js";
 import "./MatDefencePage.css";
 
 const disciplines = ["BJJ", "Judo", "Lucha", "MMA", "Grappling"];
@@ -83,13 +83,13 @@ function MatDefencePage() {
             </a>
           </div>
           <div className="md-page__hero-image">
-            <img src="/mat_defence/jabon-mat-defence-gimnasio.webp" alt="Jabón artesanal Mat Defence de árbol de té y romero para deportistas de combate" {...imgSize("/mat_defence/jabon-mat-defence-gimnasio.webp")} fetchpriority="high" decoding="async" />
+            <img src="/mat_defence/jabon-mat-defence-gimnasio.webp" alt="Jabón artesanal Mat Defence de árbol de té y romero para deportistas de combate" {...imgSize("/mat_defence/jabon-mat-defence-gimnasio.webp", SIZES.half)} fetchpriority="high" decoding="async" />
           </div>
         </div>
 
         {/* Full-width fight image */}
         <div className="md-page__fight">
-          <img src="/mat_defence/pelea-mat-defence-cuervo.webp" alt="Peleadores en el tatami: Mat Defence, jabón artesanal para atletas" {...imgSize("/mat_defence/pelea-mat-defence-cuervo.webp")} loading="lazy" decoding="async" />
+          <img src="/mat_defence/pelea-mat-defence-cuervo.webp" alt="Peleadores en el tatami: Mat Defence, jabón artesanal para atletas" {...imgSize("/mat_defence/pelea-mat-defence-cuervo.webp", SIZES.full)} loading="lazy" decoding="async" />
           <div className="md-page__fight-card">
             <span className="md-page__fight-card-eyebrow">Mat Defence Soap Co.</span>
             <h3 className="md-page__fight-card-title">El jabón para peleadores</h3>
@@ -110,7 +110,7 @@ function MatDefencePage() {
           <div className="md-products__grid">
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/jabon-mat-defence-grande.webp" alt="Mat Defence Grande, jabón artesanal de 120 g con árbol de té y romero" {...imgSize("/mat_defence/jabon-mat-defence-grande.webp")} loading="lazy" decoding="async" />
+                <img src="/mat_defence/jabon-mat-defence-grande.webp" alt="Mat Defence Grande, jabón artesanal de 120 g con árbol de té y romero" {...imgSize("/mat_defence/jabon-mat-defence-grande.webp", SIZES.half)} loading="lazy" decoding="async" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">120 g</span>
@@ -132,7 +132,7 @@ function MatDefencePage() {
 
             <div className="md-product-card">
               <div className="md-product-card__image">
-                <img src="/mat_defence/jabon-mat-defence-chico.webp" alt="Mat Defence Mini, jabón artesanal de 30 g tamaño viaje para el gym" {...imgSize("/mat_defence/jabon-mat-defence-chico.webp")} loading="lazy" decoding="async" />
+                <img src="/mat_defence/jabon-mat-defence-chico.webp" alt="Mat Defence Mini, jabón artesanal de 30 g tamaño viaje para el gym" {...imgSize("/mat_defence/jabon-mat-defence-chico.webp", SIZES.half)} loading="lazy" decoding="async" />
               </div>
               <div className="md-product-card__body">
                 <span className="md-product-card__size">30 g</span>
@@ -202,10 +202,10 @@ function MatDefencePage() {
                 <div className="md-athlete__image-wrap">
                   {athlete.instagram ? (
                     <a href={athlete.instagram} target="_blank" rel="noopener noreferrer">
-                      <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image)} loading="lazy" decoding="async" />
+                      <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image, SIZES.grid3)} loading="lazy" decoding="async" />
                     </a>
                   ) : (
-                    <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image)} loading="lazy" decoding="async" />
+                    <img src={athlete.image} alt={athlete.instagram ? `${athlete.name}, atleta del equipo Mat Defence` : "Próximo atleta del equipo Mat Defence"} {...imgSize(athlete.image, SIZES.grid3)} loading="lazy" decoding="async" />
                   )}
                 </div>
                 <div className="md-athlete__info">

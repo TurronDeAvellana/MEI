@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { site } from "../data/site.js";
-import { imgSize } from "../data/imageSizes.js";
+import { imgSize, SIZES } from "../data/imageSizes.js";
 import "./MatDefence.css";
 
 function MatDefence() {
@@ -19,7 +19,7 @@ function MatDefence() {
           </Link>
         </div>
         <div className="mat-defence-preview__image">
-          <img src="/mat_defence/deportista-mat-defence-cuervo.webp" alt="Deportista de artes marciales con el jabón artesanal Mat Defence" {...imgSize("/mat_defence/deportista-mat-defence-cuervo.webp")} loading="lazy" decoding="async" />
+          <img src="/mat_defence/deportista-mat-defence-cuervo.webp" alt="Deportista de artes marciales con el jabón artesanal Mat Defence" {...imgSize("/mat_defence/deportista-mat-defence-cuervo.webp", SIZES.half)} loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

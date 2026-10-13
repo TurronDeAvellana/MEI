@@ -7,7 +7,7 @@ import { formatPrice } from "../utils/formatPrice.js";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Sprig from "../components/Sprig.jsx";
-import { imgSize, productAlt } from "../data/imageSizes.js";
+import { imgSize, productAlt, SIZES } from "../data/imageSizes.js";
 import "./ProductoDetalle.css";
 
 const iconProps = {
@@ -149,7 +149,7 @@ function ProductoDetalle() {
 
         <div className="detalle__layout">
           <div className="detalle__image-wrap">
-            <img key={activeImage} className="detalle__main-img" src={activeImage} alt={productAlt(product)} {...imgSize(activeImage)} fetchpriority="high" decoding="async" />
+            <img key={activeImage} className="detalle__main-img" src={activeImage} alt={productAlt(product)} {...imgSize(activeImage, SIZES.half)} fetchpriority="high" decoding="async" />
             {images.length > 1 && (
               <div className="detalle__thumbs">
                 {images.map((img, i) => (
@@ -160,7 +160,7 @@ function ProductoDetalle() {
                     onClick={() => setActiveImage(img)}
                     aria-label={`Ver foto ${i + 1} de ${product.name}`}
                   >
-                    <img src={img} alt="" {...imgSize(img)} loading="lazy" decoding="async" />
+                    <img src={img} alt="" {...imgSize(img, SIZES.thumb)} loading="lazy" decoding="async" />
                   </button>
                 ))}
               </div>

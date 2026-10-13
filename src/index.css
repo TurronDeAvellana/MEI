@@ -1,3 +1,69 @@
+/* ── Fuentes (alojadas en /public/fonts, solo subconjunto latino) ──
+   Las "Fallback" son fuentes del sistema ajustadas a las métricas de cada
+   fuente web, para que el texto no salte (CLS) cuando la fuente real carga. */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-wght-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/montserrat-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/bebas-neue-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: normal;
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("Noto Serif");
+  size-adjust: 96.31%;
+  ascent-override: 95.94%;
+  descent-override: 29.8%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: italic;
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Liberation Serif Italic"), local("Noto Serif Italic");
+  size-adjust: 85.87%;
+  ascent-override: 107.6%;
+  descent-override: 33.42%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Montserrat Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Roboto");
+  size-adjust: 112.83%;
+  ascent-override: 85.79%;
+  descent-override: 22.25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Bebas Fallback";
+  src: local("Impact"), local("Oswald");
+  size-adjust: 81.76%;
+  ascent-override: 110.07%;
+  descent-override: 36.69%;
+  line-gap-override: 0%;
+}
+
 /* ── Brand tokens ─────────────────────────────────────────────── */
 :root {
   /* MEI palette */
@@ -23,9 +89,9 @@
   --md-stone:   #888888;
 
   /* Typography */
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body:    "Montserrat", system-ui, sans-serif;
-  --font-impact:  "Bebas Neue", Impact, sans-serif;
+  --font-display: "Cormorant Garamond", "Cormorant Fallback", Georgia, serif;
+  --font-body:    "Montserrat", "Montserrat Fallback", system-ui, sans-serif;
+  --font-impact:  "Bebas Neue", "Bebas Fallback", Impact, sans-serif;
 
   /* Motion tokens — transform/opacity first, out-curves for entrances */
   --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);   /* default: fast start, soft landing */

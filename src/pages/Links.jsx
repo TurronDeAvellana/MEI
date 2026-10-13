@@ -1,5 +1,5 @@
 import { site } from "../data/site.js";
-import { imgSize } from "../data/imageSizes.js";
+import { imgSize, SIZES } from "../data/imageSizes.js";
 import "./Links.css";
 
 const links = [
@@ -52,7 +52,7 @@ export default function Links() {
     <div className="links-page">
       {/* Background blurred */}
       <div className="links-page__bg" aria-hidden="true">
-        <img src="/mei/productos/jabones-artesanales-mei-cali-1.webp" alt="" {...imgSize("/mei/productos/jabones-artesanales-mei-cali-1.webp")} decoding="async" />
+        <img src="/mei/productos/jabones-artesanales-mei-cali-1.webp" alt="" {...imgSize("/mei/productos/jabones-artesanales-mei-cali-1.webp", SIZES.full)} decoding="async" />
       </div>
       <div className="links-page__overlay" aria-hidden="true" />
 

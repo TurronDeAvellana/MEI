@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { site } from "../data/site.js";
-import { imgSize } from "../data/imageSizes.js";
+import { imgSize, SIZES } from "../data/imageSizes.js";
 import "./Hero.css";
 
 function Hero() {
@@ -46,7 +46,7 @@ function Hero() {
               key={src}
               src={src}
               alt={i === 0 ? "Jabones artesanales de glicerina MEI hechos a mano en Cali, Colombia" : "Colección de jabones artesanales naturales MEI Magic"}
-              {...imgSize(src)}
+              {...imgSize(src, SIZES.hero)}
               {...(i === 0 ? { fetchPriority: "high" } : { loading: "lazy" })}
               decoding="async"
               className={i === current ? "active" : ""}

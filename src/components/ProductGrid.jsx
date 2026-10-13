@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { products } from "../data/products.js";
 import { formatPrice } from "../utils/formatPrice.js";
 import Sprig from "./Sprig.jsx";
-import { imgSize, productAlt } from "../data/imageSizes.js";
+import { imgSize, productAlt, SIZES } from "../data/imageSizes.js";
 import "./ProductGrid.css";
 
 function ProductGrid() {
@@ -19,9 +19,9 @@ function ProductGrid() {
         {preview.map((product) => (
           <Link to={`/producto/${product.slug}`} key={product.slug} className="product-card">
             <div className="product-card__image">
-              <img src={product.image} alt={productAlt(product)} className="product-card__img product-card__img--main" {...imgSize(product.image)} loading="lazy" decoding="async" />
+              <img src={product.image} alt={productAlt(product)} className="product-card__img product-card__img--main" {...imgSize(product.image, SIZES.grid3)} loading="lazy" decoding="async" />
               {product.image2 && (
-                <img src={product.image2} alt="" className="product-card__img product-card__img--hover" {...imgSize(product.image2)} loading="lazy" decoding="async" />
+                <img src={product.image2} alt="" className="product-card__img product-card__img--hover" {...imgSize(product.image2, SIZES.grid3)} loading="lazy" decoding="async" />
               )}
             </div>
             <div className="product-card__body">

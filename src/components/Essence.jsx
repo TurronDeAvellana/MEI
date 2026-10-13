@@ -1,6 +1,6 @@
 import { site } from "../data/site.js";
 import Sprig from "./Sprig.jsx";
-import { imgSize } from "../data/imageSizes.js";
+import { imgSize, SIZES } from "../data/imageSizes.js";
 import "./Essence.css";
 
 function Essence() {
@@ -16,7 +16,7 @@ function Essence() {
   return (
     <section id="esencia" className="section essence">
       <div className="essence__image">
-        <img src={image} alt="Elaboración artesanal de jabones de glicerina a mano con mortero en Cali" {...imgSize(image)} loading="lazy" decoding="async" />
+        <img src={image} alt="Elaboración artesanal de jabones de glicerina a mano con mortero en Cali" {...imgSize(image, SIZES.essence)} loading="lazy" decoding="async" />
       </div>
       <div className="essence__content">
         <Sprig className="essence__sprig" />

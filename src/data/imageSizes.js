@@ -29,9 +29,43 @@ const sizes = {
   "/mat_defence/logo-mat-defence-blanco.webp": [247, 256],
 };
 
-export function imgSize(src) {
+// Anchos de las versiones reducidas que genera scripts/resize-images.mjs
+// (archivo-480.webp, archivo-800.webp, …). Solo existen las menores que el original.
+const VARIANT_WIDTHS = [160, 480, 800, 1200];
+const MIN_WIDTH_FOR_VARIANTS = 600; // logos y gráficos pequeños se sirven tal cual
+
+export const imageSources = Object.keys(sizes);
+
+export function variantWidths(src) {
+  const [width] = sizes[src] || [];
+  if (!width || width < MIN_WIDTH_FOR_VARIANTS) return [];
+  return VARIANT_WIDTHS.filter((w) => w < width);
+}
+
+export const variantSrc = (src, w) => src.replace(/.webp$/, `-${w}.webp`);
+
+// Valores del atributo `sizes` según el ancho que ocupa la imagen en cada layout.
+export const SIZES = {
+  full: "100vw",
+  half: "(min-width: 768px) 50vw, 100vw",
+  hero: "(min-width: 992px) 55vw, 100vw",
+  essence: "(min-width: 992px) 50vw, 100vw",
+  grid4: "(min-width: 992px) 25vw, (min-width: 600px) 50vw, 100vw",
+  grid3: "(min-width: 992px) 33vw, (min-width: 600px) 50vw, 100vw",
+  thumb: "64px",
+};
+
+/**
+ * width/height (evitan CLS) y, si se pasa `sizesAttr`, srcSet + sizes para que
+ * el navegador descargue la versión del tamaño que realmente se muestra.
+ */
+export function imgSize(src, sizesAttr) {
   const [width, height] = sizes[src] || [];
-  return width ? { width, height } : {};
+  if (!width) return {};
+  const widths = sizesAttr ? variantWidths(src) : [];
+  if (!widths.length) return { width, height };
+  const srcSet = [...widths.map((w) => `${variantSrc(src, w)} ${w}w`), `${src} ${width}w`].join(", ");
+  return { width, height, srcSet, sizes: sizesAttr };
 }
 
 export function productAlt(product) {

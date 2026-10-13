@@ -76,9 +76,17 @@ async function main() {
   const { render, getAllRoutes, getHead } = await import(entry);
 
   // Strip the template's static <title> and default description: per-route tags replace them.
-  const template = (await readFile(join(distDir, "index.html"), "utf8"))
+  let template = (await readFile(join(distDir, "index.html"), "utf8"))
     .replace(/\s*<title>[\s\S]*?<\/title>/i, "")
     .replace(/\s*<meta\s+name="description"[\s\S]*?\/?>/i, "");
+
+  // Inline the app stylesheet (~10 KB) so it doesn't block the first render with an extra request.
+  const cssLink = /<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/;
+  const cssMatch = template.match(cssLink);
+  if (cssMatch) {
+    const css = await readFile(join(distDir, cssMatch[1]), "utf8");
+    template = template.replace(cssLink, () => `<style>${css.replace(/<\/style/gi, "<\\/style")}</style>`);
+  }
 
   if (!template.includes('<div id="root"></div>')) {
     throw new Error('dist/index.html: <div id="root"></div> not found');
