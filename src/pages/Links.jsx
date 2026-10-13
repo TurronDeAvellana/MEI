@@ -1,4 +1,5 @@
 import { site } from "../data/site.js";
+import { imgSize } from "../data/imageSizes.js";
 import "./Links.css";
 
 const links = [
@@ -51,14 +52,14 @@ export default function Links() {
     <div className="links-page">
       {/* Background blurred */}
       <div className="links-page__bg" aria-hidden="true">
-        <img src="/mei/productos/hero1.jpg" alt="" />
+        <img src="/mei/productos/jabones-artesanales-mei-cali-1.webp" alt="" {...imgSize("/mei/productos/jabones-artesanales-mei-cali-1.webp")} decoding="async" />
       </div>
       <div className="links-page__overlay" aria-hidden="true" />
 
       {/* Card */}
       <div className="links-card">
         {/* Logo */}
-        <img src={site.logo} alt={site.name} className="links-card__logo" />
+        <img src={site.logo} alt="Logo MEI Magic, jabones artesanales de Cali" className="links-card__logo" {...imgSize(site.logo)} fetchpriority="high" decoding="async" />
 
         {/* Name & tagline */}
         <h1 className="links-card__name">{site.name}</h1>

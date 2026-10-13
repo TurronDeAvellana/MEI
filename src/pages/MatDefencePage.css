@@ -1,6 +1,7 @@
 /* ── Mat Defence — full page ──────────────────────────────────── */
 
 .md-page {
+  --focus-ring: var(--md-kraft);
   background: var(--md-black);
   color: var(--md-crudo);
   min-height: 100vh;
@@ -9,7 +10,7 @@
 /* Discipline strip */
 .md-page__strip {
   background: var(--md-kraft);
-  padding: 10px 6%;
+  padding: 10px var(--gutter);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +20,8 @@
 
 .md-page__strip span {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
+  line-height: 1.6;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -35,15 +37,16 @@
 .md-page__hero {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: var(--space-9);
   align-items: center;
-  padding: 64px 6% 48px;
+  padding: var(--space-10) var(--gutter) var(--space-9);
 }
 
 @media (min-width: 768px) {
   .md-page__hero {
     grid-template-columns: 1fr 1fr;
-    padding: 80px 8% 60px;
+    gap: var(--space-10);
+    padding: var(--space-11) var(--gutter) var(--space-10);
   }
 }
 
@@ -62,92 +65,104 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   filter: contrast(1.05) saturate(0.9);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.7);
   display: block;
 }
 
 /* Back link */
 .md-page__back {
   display: inline-block;
-  margin-bottom: 32px;
+  margin-bottom: var(--space-6);
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: var(--text-2xs);
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--md-stone);
-  transition: color 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.md-page__back:hover { color: var(--md-kraft); }
+@media (hover: hover) and (pointer: fine) {
+  .md-page__back:hover { color: var(--md-kraft); }
+}
 
 /* Eyebrow */
 .md-page__eyebrow {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--md-kraft);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 /* Title */
 .md-page__title {
   font-family: var(--font-impact);
   font-size: clamp(5rem, 12vw, 11rem);
-  letter-spacing: 0.04em;
-  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.88;
   color: var(--md-crudo);
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 /* Tagline */
 .md-page__tagline {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--md-stone);
   border-left: 2px solid var(--md-kraft);
-  padding-left: 14px;
-  margin-bottom: 24px;
+  padding-left: var(--space-3);
+  margin-bottom: var(--space-6);
 }
 
 /* Body text */
 .md-page__body {
-  font-size: 0.88rem;
-  line-height: 1.8;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
   color: var(--md-stone);
-  max-width: 480px;
-  margin-bottom: 10px;
+  max-width: 30rem;
+  margin-bottom: var(--space-2);
 }
 
 /* CTA */
 .md-page__cta {
-  display: inline-block;
-  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: var(--space-7);
   padding: 14px 32px;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   background: var(--md-kraft);
   color: var(--md-black);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
 }
 
-.md-page__cta:hover {
-  background: #b89558;
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .md-page__cta:hover {
+    background: var(--md-kraft-deep);
+    transform: translateY(-2px);
+  }
 }
 
 /* Full-width fight image */
@@ -175,9 +190,10 @@
 .md-page__fight-card {
   background: rgba(17, 17, 17, 0.82);
   border: 1px solid rgba(200, 169, 110, 0.25);
-  border-radius: 16px;
-  padding: 24px 24px;
-  margin: 0 5% 0;
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin: 0 var(--gutter);
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.8);
   transform: translateY(-32px);
 }
 
@@ -193,8 +209,9 @@
     background: rgba(17, 17, 17, 0.55);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 40px 36px;
+    padding: var(--space-8) var(--space-8);
     border-radius: 0;
+    box-shadow: none;
     border-top: none;
     border-bottom: none;
     border-right: none;
@@ -207,27 +224,28 @@
 .md-page__fight-card-eyebrow {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: var(--text-3xs);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--md-kraft);
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 .md-page__fight-card-title {
   font-family: var(--font-impact);
   font-size: clamp(2rem, 5vw, 3rem);
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   line-height: 0.95;
   color: var(--md-crudo);
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .md-page__fight-card-body {
-  font-size: 0.9rem;
-  line-height: 1.8;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
   color: rgba(240, 235, 224, 0.82);
   margin-bottom: 20px;
 }
@@ -240,21 +258,22 @@
 
 .md-page__fight-card-tags span {
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: var(--text-3xs);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  line-height: 1.3;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--md-black);
   background: var(--md-kraft);
   padding: 5px 12px;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
 }
 
 /* Product cards */
 .md-products__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: var(--space-6);
 }
 
 @media (min-width: 600px) {
@@ -265,15 +284,17 @@
 
 .md-product-card {
   background: var(--md-dark);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(200, 169, 110, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--md-line);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
 }
 
-.md-product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+@media (hover: hover) and (pointer: fine) {
+  .md-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  }
 }
 
 .md-product-card__image {
@@ -286,16 +307,18 @@
   object-fit: cover;
   object-position: center;
   filter: contrast(1.05) saturate(0.9);
-  transition: transform 0.5s ease;
+  transition: transform var(--dur-slow) var(--ease-out);
   display: block;
 }
 
-.md-product-card:hover .md-product-card__image img {
-  transform: scale(1.04);
+@media (hover: hover) and (pointer: fine) {
+  .md-product-card:hover .md-product-card__image img {
+    transform: scale(1.04);
+  }
 }
 
 .md-product-card__body {
-  padding: 20px 24px 24px;
+  padding: var(--space-5) var(--space-6) var(--space-6);
   display: flex;
   flex-direction: column;
 }
@@ -303,85 +326,94 @@
 .md-product-card__size {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.62rem;
+  font-size: var(--text-3xs);
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--md-kraft);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .md-product-card__name {
   font-family: var(--font-impact);
   font-size: clamp(1.6rem, 3vw, 2rem);
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.035em;
   line-height: 1;
   color: var(--md-crudo);
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: var(--space-2);
 }
 
 .md-product-card__tagline {
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
   color: var(--md-stone);
   letter-spacing: 0.02em;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 .md-product-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  border-top: 1px solid rgba(200, 169, 110, 0.15);
-  padding-top: 16px;
+  gap: var(--space-4);
+  border-top: 1px solid var(--md-line);
+  padding-top: var(--space-4);
 }
 
 .md-product-card__price {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--text-md);
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--md-crudo);
 }
 
 .md-product-card__cta {
-  display: inline-block;
-  padding: 10px 24px;
-  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   background: var(--md-kraft);
   color: var(--md-black);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
   white-space: nowrap;
 }
 
-.md-product-card__cta:hover {
-  background: #b89558;
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .md-product-card__cta:hover {
+    background: var(--md-kraft-deep);
+    transform: translateY(-2px);
+  }
 }
 
 /* Modo de uso */
 .md-usage__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: var(--space-7);
 }
 
 @media (min-width: 768px) {
   .md-usage__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
+    gap: var(--space-9);
   }
 }
 
 .md-usage__step {
-  border-top: 1px solid rgba(200, 169, 110, 0.2);
-  padding-top: 24px;
+  border-top: 1px solid var(--md-line);
+  padding-top: var(--space-6);
 }
 
 .md-usage__number {
@@ -392,64 +424,60 @@
   line-height: 1;
   color: var(--md-kraft);
   opacity: 0.9;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 .md-usage__tag {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--md-stone);
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
 }
 
 .md-usage__title {
   font-family: var(--font-impact);
   font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1.05;
   color: var(--md-crudo);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 .md-usage__body {
-  font-size: 0.85rem;
-  line-height: 1.75;
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
   color: var(--md-stone);
-  max-width: 420px;
+  max-width: 26rem;
 }
 
 /* Content sections */
 .md-page__section {
-  padding: 56px 6%;
+  padding: var(--section-y) var(--gutter);
   border-top: 1px solid rgba(200, 169, 110, 0.12);
-}
-
-@media (min-width: 768px) {
-  .md-page__section {
-    padding: 64px 8%;
-  }
 }
 
 .md-page__section-label {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-2xs);
+  line-height: 1.4;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--md-kraft);
-  margin-bottom: 28px;
+  margin-bottom: var(--space-7);
 }
 
 /* Features grid */
 .md-page__features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: var(--space-7) var(--space-5);
 }
 
 @media (min-width: 768px) {
@@ -459,35 +487,37 @@
 }
 
 .md-page__feature {
-  border-top: 1px solid rgba(200, 169, 110, 0.2);
-  padding-top: 20px;
+  border-top: 1px solid var(--md-line);
+  padding-top: var(--space-5);
 }
 
 .md-page__feature h3 {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
+  line-height: 1.4;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--md-crudo);
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
 }
 
 .md-page__feature p {
-  font-size: 0.8rem;
-  line-height: 1.7;
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
   color: var(--md-stone);
 }
 
 /* ── Athletes section ─────────────────────────────────────────── */
 .md-athletes__header {
-  margin-bottom: 40px;
+  margin-bottom: var(--space-8);
 }
 
 .md-athletes__title {
   font-family: var(--font-impact);
   font-size: clamp(3rem, 7vw, 7rem);
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 0.9;
   color: var(--md-crudo);
   text-transform: uppercase;
@@ -496,7 +526,7 @@
 .md-athletes__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: var(--space-7) var(--space-5);
 }
 
 @media (min-width: 600px) {
@@ -519,8 +549,8 @@
 .md-athlete__image-wrap {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(200, 169, 110, 0.15);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--md-line);
 }
 
 .md-athlete__image-wrap img {
@@ -529,13 +559,15 @@
   object-fit: cover;
   object-position: top;
   filter: grayscale(20%) contrast(1.05);
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform var(--dur-slow) var(--ease-out), filter var(--dur-slow) var(--ease-out);
   display: block;
 }
 
-.md-athlete:hover .md-athlete__image-wrap img {
-  transform: scale(1.04);
-  filter: grayscale(0%) contrast(1.08);
+@media (hover: hover) and (pointer: fine) {
+  .md-athlete:hover .md-athlete__image-wrap img {
+    transform: scale(1.04);
+    filter: grayscale(0%) contrast(1.08);
+  }
 }
 
 .md-athlete__name a {
@@ -543,37 +575,44 @@
   text-decoration: none;
 }
 
-.md-athlete__name a:hover {
-  color: var(--md-kraft);
+@media (hover: hover) and (pointer: fine) {
+  .md-athlete__name a:hover {
+    color: var(--md-kraft);
+  }
 }
 
 /* Info below card */
 .md-athlete__info {
-  padding: 14px 4px 0;
+  padding: var(--space-4) var(--space-1) 0;
 }
 
 .md-athlete__name {
   font-family: var(--font-impact);
-  font-size: 1.6rem;
-  letter-spacing: 0.05em;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   color: var(--md-crudo);
   text-transform: uppercase;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: var(--space-1);
 }
 
 .md-athlete__handle {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--md-stone);
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-1);
 }
 
-.md-athlete__handle:hover {
-  color: var(--md-kraft);
+@media (hover: hover) and (pointer: fine) {
+  .md-athlete__handle:hover {
+    color: var(--md-kraft);
+  }
 }
 
 .md-athlete__meta {
@@ -584,7 +623,7 @@
 
 .md-athlete__discipline {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -593,7 +632,7 @@
 
 .md-athlete__weight {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--md-stone);
@@ -603,12 +642,42 @@
 .md-page__footer-strip {
   background: rgba(200, 169, 110, 0.07);
   border-top: 1px solid rgba(200, 169, 110, 0.15);
-  padding: 18px 6%;
+  padding: var(--space-5) var(--gutter);
   text-align: center;
   font-family: var(--font-body);
-  font-size: 0.62rem;
+  font-size: var(--text-3xs);
+  line-height: 1.6;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--md-stone);
 }
+
+/* Descriptive subtitle under the H1 */
+.md-page__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--md-kraft);
+  margin-bottom: 14px;
+}
+
+/* ── Motion — Mat Defence: snappier curve, same restraint ─────── */
+.md-page__cta,
+.md-product-card,
+.md-product-card__cta,
+.md-product-card__image img,
+.md-athlete__image-wrap img {
+  transition-timing-function: var(--ease-snap);
+}
+
+.md-product-card { transition-duration: var(--dur-fast); }
+.md-page__cta,
+.md-product-card__cta { transition-duration: var(--dur-fast); }
+
+.md-page__cta:active,
+.md-product-card__cta:active { transform: scale(0.97); transition-duration: var(--dur-instant); }
+.md-product-card:active { transform: scale(0.985); transition-duration: var(--dur-instant); }

@@ -1,8 +1,29 @@
+# Prerendered SPA (see scripts/prerender.mjs):
+#   /                 -> index.html
+#   /catalogo         -> catalogo.html
+#   /producto/hera    -> producto/hera.html
+# Anything else falls back to index.html and React Router handles it client-side.
+
+Options -MultiViews -Indexes
+DirectoryIndex index.html
+# Don't auto-append "/" to directory URLs (e.g. /producto): canonical URLs have no trailing slash.
+DirectorySlash Off
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 301: strip trailing slash from any URL except the root (query string is kept).
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
+
+  # Clean URL -> prerendered .html file when it exists.
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # SPA fallback for everything that isn't a real file.
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule . /index.html [L]
 </IfModule>

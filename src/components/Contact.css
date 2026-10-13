@@ -4,21 +4,23 @@
 }
 
 .contact h2 {
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: var(--display-lg);
   font-weight: 300;
-  margin-bottom: 16px;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  margin-bottom: var(--space-4);
 }
 
 .contact h2 em {
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--terracotta-accent);
 }
 
 .contact > p {
-  max-width: 480px;
-  margin: 0 auto 32px;
-  font-size: 0.9rem;
-  line-height: 1.75;
+  max-width: 30rem;
+  margin: 0 auto var(--space-7);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
   color: var(--charcoal);
   opacity: 0.85;
 }
@@ -26,21 +28,26 @@
 .contact__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: var(--space-3);
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-4);
 }
 
 .contact__instagram {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--space-2);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--sage-dark);
   text-decoration: none;
 }
 
-.contact__instagram:hover {
-  color: var(--terracotta);
+@media (hover: hover) and (pointer: fine) {
+  .contact__instagram:hover {
+    color: var(--terracotta-ink);
+  }
 }

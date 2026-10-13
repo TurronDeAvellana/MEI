@@ -1,21 +1,22 @@
 .footer {
+  --focus-ring: var(--cream);
   background: var(--sage-dark);
   color: var(--cream);
-  padding: 64px 6% 0;
+  padding: var(--space-10) var(--gutter) 0;
 }
 
 /* Three-column grid */
 .footer__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
-  padding-bottom: 48px;
+  gap: var(--space-8);
+  padding-bottom: var(--space-9);
 }
 
 @media (min-width: 768px) {
   .footer__grid {
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 48px;
+    gap: var(--space-9);
   }
 }
 
@@ -24,7 +25,7 @@
   height: 52px;
   width: 52px;
   object-fit: contain;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .footer__sprig {
@@ -32,30 +33,38 @@
   height: auto;
   color: var(--terracotta);
   opacity: 0.75;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-3);
 }
 
 .footer__tagline {
-  font-size: 0.82rem;
-  line-height: 1.7;
-  color: rgba(244, 239, 232, 0.55);
-  max-width: 260px;
-  margin-bottom: 24px;
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+  color: rgba(244, 239, 232, 0.74);
+  max-width: 17rem;
+  margin-bottom: var(--space-4);
 }
 
 .footer__socials {
   display: flex;
-  gap: 16px;
+  gap: var(--space-1);
+  margin-left: -12px; /* optical: icon glyphs align with the text column */
 }
 
 .footer__socials a {
   display: inline-flex;
-  color: rgba(244, 239, 232, 0.45);
-  transition: color 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap);
+  height: var(--tap);
+  border-radius: 50%;
+  color: rgba(244, 239, 232, 0.72);
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.footer__socials a:hover {
-  color: var(--terracotta);
+@media (hover: hover) and (pointer: fine) {
+  .footer__socials a:hover {
+    color: var(--terracotta-light);
+  }
 }
 
 .footer__socials svg {
@@ -66,46 +75,53 @@
 /* Nav / Contact columns */
 .footer__col-title {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
   font-weight: 600;
-  letter-spacing: 0.18em;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--terracotta);
-  margin-bottom: 20px;
+  color: var(--terracotta-light);
+  margin-bottom: var(--space-2);
 }
 
 .footer__col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
 .footer__col a {
-  font-size: 0.82rem;
-  color: rgba(244, 239, 232, 0.65);
+  display: inline-block;
+  padding: 10px 0;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: rgba(244, 239, 232, 0.8);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.footer__col a:hover {
-  color: var(--cream);
+@media (hover: hover) and (pointer: fine) {
+  .footer__col a:hover {
+    color: var(--cream);
+  }
 }
 
 /* Bottom bar */
 .footer__bottom {
   border-top: 1px solid rgba(244, 239, 232, 0.1);
-  padding: 20px 0 24px;
+  padding: var(--space-5) 0 var(--space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-2);
   text-align: center;
-  font-size: 0.65rem;
+  font-size: var(--text-3xs);
   font-weight: 600;
+  line-height: 1.5;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(244, 239, 232, 0.35);
+  color: rgba(244, 239, 232, 0.6);
 }
 
 @media (min-width: 768px) {
@@ -117,26 +133,36 @@
 }
 
 .footer__dev {
-  color: rgba(244, 239, 232, 0.35);
+  display: inline-block;
+  padding: var(--space-2) 0;
+  color: rgba(244, 239, 232, 0.6);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.footer__dev:hover {
-  color: rgba(244, 239, 232, 0.7);
+@media (hover: hover) and (pointer: fine) {
+  .footer__dev:hover {
+    color: var(--cream);
+  }
 }
 
 .footer__bottom-links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--space-6);
 }
 
 .footer__bottom-links a {
-  color: rgba(244, 239, 232, 0.35);
+  display: inline-block;
+  padding: var(--space-2) 0;
+  color: rgba(244, 239, 232, 0.6);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.footer__bottom-links a:hover {
-  color: rgba(244, 239, 232, 0.7);
+@media (hover: hover) and (pointer: fine) {
+  .footer__bottom-links a:hover {
+    color: var(--cream);
+  }
 }

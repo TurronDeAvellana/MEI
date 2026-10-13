@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "../data/products.js";
+import { site } from "../data/site.js";
 import { ingredientBenefits } from "../data/ingredientBenefits.js";
 import { formatPrice } from "../utils/formatPrice.js";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Sprig from "../components/Sprig.jsx";
+import { imgSize, productAlt } from "../data/imageSizes.js";
 import "./ProductoDetalle.css";
 
 const iconProps = {
@@ -97,6 +99,11 @@ function ProductoDetalle() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
+  const related = products
+    .filter((p) => !p.featured && p.slug !== product.slug)
+    .sort((a, b) => Number(b.linea === product.linea) - Number(a.linea === product.linea))
+    .slice(0, 3);
+
   const unitPrice = size === "mini" ? product.miniPrice : product.price;
   const formattedPrice = formatPrice(unitPrice);
   const sizeLabel = size === "mini" ? "Mini 30g" : "Tamaño original";
@@ -142,7 +149,7 @@ function ProductoDetalle() {
 
         <div className="detalle__layout">
           <div className="detalle__image-wrap">
-            <img src={activeImage} alt={product.name} />
+            <img key={activeImage} className="detalle__main-img" src={activeImage} alt={productAlt(product)} {...imgSize(activeImage)} fetchpriority="high" decoding="async" />
             {images.length > 1 && (
               <div className="detalle__thumbs">
                 {images.map((img, i) => (
@@ -153,7 +160,7 @@ function ProductoDetalle() {
                     onClick={() => setActiveImage(img)}
                     aria-label={`Ver foto ${i + 1} de ${product.name}`}
                   >
-                    <img src={img} alt="" />
+                    <img src={img} alt="" {...imgSize(img)} loading="lazy" decoding="async" />
                   </button>
                 ))}
               </div>
@@ -298,6 +305,23 @@ function ProductoDetalle() {
             </div>
           </section>
         </div>
+
+        {related.length > 0 && (
+          <section className="detalle__related" aria-labelledby="relacionados-title">
+            <h2 id="relacionados-title">{site.related.title}</h2>
+            <ul className="detalle__related-list">
+              {related.map((p) => (
+                <li key={p.slug}>
+                  <Link to={`/producto/${p.slug}`}>
+                    {p.name}
+                    {p.tagline && <span>{p.tagline}</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link to="/catalogo" className="detalle__related-all">{site.related.catalogLink} →</Link>
+          </section>
+        )}
       </main>
       <Footer />
     </>

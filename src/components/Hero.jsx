@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { site } from "../data/site.js";
+import { imgSize } from "../data/imageSizes.js";
 import "./Hero.css";
 
 function Hero() {
-  const { eyebrow, headline, body, ctaPrimary, ctaSecondary, images } = site.hero;
+  const { h1, eyebrow, localNote, headline, body, ctaPrimary, ctaSecondary, images } = site.hero;
   const [current, setCurrent] = useState(0);
 
   const headlineWords = headline.trim().split(" ");
@@ -11,6 +12,7 @@ function Hero() {
   const headlineStart = headlineWords.join(" ");
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
@@ -20,12 +22,14 @@ function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero__content">
-        <span className="hero__eyebrow">{eyebrow}</span>
-        <h1 className="hero__headline">
+        <h1 className="hero__eyebrow">{h1}</h1>
+        <p className="hero__headline">
           {headlineStart && `${headlineStart} `}
           <em>{headlineAccent}</em>
-        </h1>
+        </p>
+        <p className="hero__kicker">{eyebrow}</p>
         <p className="hero__body">{body}</p>
+        <p className="hero__local">{localNote}</p>
         <div className="hero__buttons">
           <a className="btn btn--primary" href={ctaPrimary.href}>
             {ctaPrimary.label}
@@ -41,7 +45,10 @@ function Hero() {
             <img
               key={src}
               src={src}
-              alt={`${site.name} jabón artesanal ${i + 1}`}
+              alt={i === 0 ? "Jabones artesanales de glicerina MEI hechos a mano en Cali, Colombia" : "Colección de jabones artesanales naturales MEI Magic"}
+              {...imgSize(src)}
+              {...(i === 0 ? { fetchPriority: "high" } : { loading: "lazy" })}
+              decoding="async"
               className={i === current ? "active" : ""}
             />
           ))}
