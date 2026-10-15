@@ -7,7 +7,9 @@ import ProductoDetalle from "./pages/ProductoDetalle.jsx";
 import MatDefencePage from "./pages/MatDefencePage.jsx";
 import AmenitiesPage from "./pages/AmenitiesPage.jsx";
 import Links from "./pages/Links.jsx";
-
+import BlogPage from "./pages/blog/BlogPage.jsx";
+import CompetenciasPage from "./pages/blog/CompetenciasPage.jsx";
+import CompetenciaPage from "./pages/blog/CompetenciaPage.jsx";
 function App() {
   return (
     <>
@@ -20,7 +22,9 @@ function App() {
         <Route path="/mat-defence" element={<MatDefencePage />} />
         <Route path="/amenities" element={<AmenitiesPage />} />
         <Route path="/links" element={<Links />} />
-      </Routes>
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/competencias" element={<CompetenciasPage />} />
+        <Route path="/blog/competencias/:evento" element={<CompetenciaPage />} />      </Routes>
     </>
   );
 }

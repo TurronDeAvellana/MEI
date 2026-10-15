@@ -1,6 +1,6 @@
 .hero {
-  min-height: calc(100vh - 72px);
-  min-height: calc(100svh - 72px);
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;

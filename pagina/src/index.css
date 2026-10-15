@@ -211,6 +211,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* El header flota (fixed): las anclas no deben quedar tapadas */
+[id] { scroll-margin-top: 6rem; }
+
 html,
 body {
   overflow-x: clip; /* tilted image frames must not cause sideways scroll */
@@ -344,7 +347,8 @@ h1, h2, h3, h4 {
 .catalogo__back,
 .detalle__back,
 .am-page__back,
-.md-page__back {
+.md-page__back,
+.blog__back {
   display: inline-flex;
   align-items: center;
   gap: 6px;

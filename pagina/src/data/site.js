@@ -17,6 +17,7 @@ export const site = {
     { label: "Productos", href: "/catalogo" },
     { label: "Amenities", href: "/amenities" },
     { label: "Mat Defence", href: "/mat-defence" },
+    { label: "Blog", href: "/blog" },
     { label: "Contacto", href: "/#contacto" },
   ],
   hero: {

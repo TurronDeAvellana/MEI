@@ -9,9 +9,45 @@ import {
   itemListSchema,
   generalFaqSchema,
   matDefenceFaqSchema,
+  sportsEventSchema,
 } from "./schema.js";
+import { findCompetencia, hasContent } from "../data/blog.js";
 
 const compact = (arr) => arr.filter(Boolean);
+
+const blogCrumbs = [
+  { name: "Inicio", path: "/" },
+  { name: "Blog", path: "/blog" },
+];
+
+function clip(text, max) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:\s]+$/, "") + "…";
+}
+
+function blogHead(eventSlug, path, base) {
+  const c = findCompetencia(eventSlug);
+  if (!c) return base(notFoundMeta, "/", { robots: "noindex,follow" });
+
+  const description = clip(
+    c.resumen ||
+      `${c.nombre}: torneo patrocinado por MEI. El organizador y los atletas cuentan cómo se vivió el torneo y qué les parecieron los kits MEI.`,
+    160
+  );
+  return base({ title: clip(`${c.nombre}: historias de atletas | Blog MEI`, 60), description }, path, {
+    image: abs(c.imagen || defaultImage),
+    robots: hasContent(c) ? "index,follow" : "noindex,follow",
+    jsonLd: compact([
+      sportsEventSchema(c),
+      breadcrumbSchema([
+        ...blogCrumbs,
+        { name: "Competencias", path: "/blog/competencias" },
+        { name: c.nombre, path },
+      ]),
+    ]),
+  });
+}
 
 export function getHead(pathname = "/") {
   let path = String(pathname || "/").split(/[?#]/)[0];
@@ -49,6 +85,9 @@ export function getHead(pathname = "/") {
     });
   }
 
+  const blogMatch = path.match(/^\/blog\/competencias\/([^/]+)$/);
+  if (blogMatch) return blogHead(blogMatch[1], path, base);
+
   const meta = routeMeta[path];
   if (!meta) return base(notFoundMeta, "/", { robots: "noindex,follow" });
 
@@ -70,7 +109,10 @@ export function getHead(pathname = "/") {
       ]),
       matDefenceFaqSchema(),
     ]);
-  } else if (path === "/amenities")
+  } else if (path === "/blog") jsonLd = [breadcrumbSchema(blogCrumbs)];
+  else if (path === "/blog/competencias")
+    jsonLd = [breadcrumbSchema([...blogCrumbs, { name: "Competencias", path }])];
+  else if (path === "/amenities")
     jsonLd = [
       breadcrumbSchema([
         { name: "Inicio", path: "/" },

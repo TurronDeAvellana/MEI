@@ -90,6 +90,7 @@ function Footer() {
           <Link to="/">Inicio</Link>
           <Link to="/catalogo">Productos</Link>
           <Link to="/mat-defence">Mat Defence</Link>
+          <Link to="/blog">Blog</Link>
         </div>
       </div>
     </footer>

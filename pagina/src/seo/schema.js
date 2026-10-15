@@ -129,3 +129,26 @@ export function faqSchema(list) {
 
 export const generalFaqSchema = () => faqSchema(faqs && faqs.general);
 export const matDefenceFaqSchema = () => faqSchema(faqs && faqs.matDefence);
+
+// ── Blog ──────────────────────────────────────────────────────
+const compPath = (c) => `/blog/competencias/${c.slug}`;
+
+// SportsEvent requiere fecha y lugar; sin ellos no se emite.
+export function sportsEventSchema(c) {
+  if (!c.fecha || !c.lugar) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "@id": abs(compPath(c)) + "#event",
+    name: c.nombre,
+    startDate: c.fecha,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: { "@type": "Place", name: c.lugar, address: c.lugar },
+    ...(c.disciplina && { sport: c.disciplina }),
+    ...(c.resumen && { description: c.resumen }),
+    ...(c.imagen && { image: [abs(c.imagen)] }),
+    sponsor: { "@id": businessId },
+  };
+}
+

@@ -49,6 +49,16 @@ export const routeMeta = {
       "Todos los enlaces de MEI Jabones Artesanales: catálogo, WhatsApp, Instagram y Mat Defence. Jabones naturales hechos a mano en Cali, Colombia.",
     noindex: true,
   },
+  "/blog": {
+    title: "Blog: historias y comunidad | MEI",
+    description:
+      "Blog de MEI: torneos que patrocinamos en Cali y el Valle del Cauca, historias de atletas y la comunidad alrededor de nuestros jabones artesanales.",
+  },
+  "/blog/competencias": {
+    title: "Competencias que patrocinamos | Blog MEI",
+    description:
+      "Torneos de deportes de contacto patrocinados por MEI y Mat Defence. Atletas cuentan quiénes son, cómo les fue y qué les pareció su kit MEI.",
+  },
 };
 
 export const notFoundMeta = {
